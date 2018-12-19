@@ -1,0 +1,156 @@
+﻿@model IEnumerable<tccGoodEyes.Models.ProdutoModel>
+@{
+    ViewBag.Title = "PedidoConfirmado";
+}
+
+<section class="confirma">
+    <div>
+        <h2>Pedido</h2>
+        <h2>Confirmado</h2>
+
+        <h3>Número do Pedido: @ViewBag.NumPedido</h3>
+    </div>
+</section>
+
+<section class="confirmacao">
+    <h3>Seu pedido foi realizado com sucesso.</h3>
+
+    <p>
+        Em breve você receberá um e-mail no endereço @ViewBag.email
+        com todos os detalhes do pedido.
+    </p>
+
+    <p>Aguardamos a confirmação do pagamento.</p>
+</section>
+
+
+<section class="contPedido">
+    <div class="col1">
+        <h4>Endereço de Entrega</h4>
+
+        <ul>
+            <li>@ViewBag.EndCli, @ViewBag.NumCli, @ViewBag.CompleCli</li>
+            <li>@ViewBag.BairroCli</li>
+            <li>
+                @ViewBag.CidadeCli,  @ViewBag.Estado - @ViewBag.EstadoUF
+            </li>
+        </ul>
+    </div>
+
+    <div class="col2">
+        <h4>Pagamento</h4>
+        @if (!ViewBag.formaPagamento.Contains("/"))
+        {
+            <ul>
+            <li>Linha Digitável do boleto para pagamento online:</li>
+            <li>@ViewBag.formaPagamento</li>
+                </ul>
+            <a href="/Produto/GerarBoleto" target="_blank" class="btnSecundario">Clique aqui para Gerar o Boleto Bancário</a>
+        }
+        else
+        {
+            <ul>
+                <li>CARTÃO</li>
+                <li><b>Nome impresso no cartão:</b>  @ViewBag.nomeCartao.Replace('-', ' ')</li>
+                <li><b>Número do cartão:</b> @ViewBag.numCartao</li>
+                <li><b>Bandeira do cartão: </b>@ViewBag.bandeira</li>
+                <li><b>Cód. de segurança: </b>@ViewBag.codSeg</li>
+                <li><b>Validade do cartão:</b>@ViewBag.validade</li>
+                <li><b>Parcelas:</b>  @ViewBag.parcelamento</li>
+            </ul>
+        }
+    </div>
+    @if(ViewBag.dtReceita != null) { 
+    <div class="col3">
+        <h4>Receita</h4>
+
+        <div class="dois">
+            <div>
+                <label>Data da Receita</label>
+                <p>@ViewBag.dtReceita</p>
+            </div>
+
+            <div>
+                <label>Data da Validade</label>
+                <p>@ViewBag.dtValidade</p>
+            </div>
+        </div>
+
+        <div>
+            <label>Nome do Oftalmo</label>
+            <p>@ViewBag.nomeOftalmo</p>
+        </div>
+
+        <table class="receita">
+            <tr>
+                <td></td>
+                <td><label>ESF.</label></td>
+                <td><label>CIL.</label></td>
+                <td><label>EIXO</label></td>
+                <td><label>ADIÇÃO</label></td>
+                <td title="Distância Pupilar"><label>D.P.</label></td>
+            </tr>
+
+            <tr>
+                <td><label>OE</label></td>
+                <td>@ViewBag.OEesferico</td>
+                <td>@ViewBag.OEcili</td>
+                <td>@ViewBag.OEeixo</td>
+                <td>@ViewBag.OEadi</td>
+                <td>@ViewBag.dp</td>
+            </tr>
+
+            <tr>
+                <td><label>OD</label></td>
+                <td>@ViewBag.ODesferico</td>
+                <td>@ViewBag.ODcili</td>
+                <td>@ViewBag.ODeixo</td>
+                <td>@ViewBag.ODadi</td>
+
+            </tr>
+        </table>
+
+    </div>
+        }
+</section>
+
+
+<section class="itensss">
+    <div class="caixaTitulo">
+        <h3>Pedido</h3>
+        <h3>Valor Total do Pedido: @ViewBag.total</h3>
+    </div>
+
+
+    <table class="itenstable pedidotab">
+        <tr>
+            <th>Item</th>
+            <th>Preço Uni.</th>
+            <th>QTDE.</th>
+            <th>Total</th>
+        </tr>
+       
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td id="iten">
+                    <img src="@item.caminho_imagem">
+                    <p>@item.nm_marca @item.cd_produto</p>
+                </td>
+                <td>@item.vl_preco_unitario</td>
+                <td>@item.qt_item</td>
+                <td>@item.vl_subtotal</td>
+            </tr>
+        }
+        <tr class="totalpreco">
+            <td>TOTAL</td>
+            <td id="totalCar">@ViewBag.Total</td>
+        </tr>
+    </table>
+</section> <!-- termina pedido-->
+
+
+<section class="acoes">
+    <a href="/Produto/ConsultaProdutos" class="btnNormal">Realizar Nova Compra</a>
+    <a href="/Cliente/MeusPedidos" class="btnSecundario">Ir Para Meus Pedidos</a>
+</section>

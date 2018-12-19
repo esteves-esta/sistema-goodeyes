@@ -1,0 +1,153 @@
+﻿@model IEnumerable<tccGoodEyes.Models.FuncionarioModel>
+
+
+@{
+    ViewBag.Title = "Consulta dos Funcionários";
+
+    Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+}
+
+
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+<section class="titulo">
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+
+        <div>
+            <h2>Consulta</h2>
+            <h1>Funcionários</h1>
+        </div>
+    </div>
+</section>
+
+
+<section class="consulta containerFunc">
+
+    <section>
+        <h4>
+            <span>@ViewBag.QtdeFunc</span>
+            Funcionários
+        </h4>
+    </section>
+
+    <section class="pesquisa">
+
+        <h3>Pesquise por:</h3>
+
+        <form action="ConsFuncionario" method="post" class="horizontal pesquisa">
+
+            <div>
+                <label>Cargo</label>
+                <select name="cargo" id="cargo" class="txtPesquisa">
+                    <option selected disabled>Escolha o cargo</option>
+                    <option value="Atendente">Atendente</option>
+                    <option value="Gerente">Gerente</option>
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Segurança">Segurança</option>
+                    <option value="Recepcionista">Recepcionista</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Nome</label>
+
+                <input list="NomeFun" name="NomeFun" class="txtPesquisa">
+                <datalist id="NomeFun">
+                    @foreach(string i in ViewBag.ListFuncionarios)
+                        {
+                            <option value="@i" />
+                        }
+                </datalist>
+            </div>
+
+            <div>
+                <label>CPF</label>
+                <input list="CPFFun" name="CPFFun" class="txtPesquisa">
+                <datalist id="CPFFun">
+                    @foreach (string i in ViewBag.ListFunCPF)
+                        {
+                            <option value="@i" />
+                        }
+                </datalist>
+            </div>
+
+            @*<input type="submit" name="btnPesquisa" id="btnPesquisa" value="Pesquisar" />*@
+
+        </form>
+    </section>
+
+    <div class="tabconsulta">
+
+        <table class="table">
+            <tr>
+                <th>
+                    Cód.
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    CPF
+                </th>
+                <th>
+                    Celular
+                </th>
+                <th>
+                    Cargo
+                </th>
+                <th>
+                    Bairro
+                </th>
+                <th>
+                    Cidade
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Ações
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_funcionario)
+                    </td>
+                    <td>
+                       @Html.DisplayFor(modelItem => item.nome)
+                        @Html.DisplayFor(modelItem => item.sobrenome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.no_cpf)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cargo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.no_cel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.bairro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sg_uf)
+                    </td>
+
+                    <td>
+                        <a class="btnTerciario" href="/Sistema/CadFuncionario?cod=@item.cd_funcionario&aviso=0">Editar</a>
+                        <a class="btnTerciario" href="/Sistema/DetalheFuncionario?cod=@item.cd_funcionario">Detalhes</a>
+                        <a class="btnTerciario excluir" href="/Sistema/ExcluirFunc?cod=@item.cd_funcionario">Deletar</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    </div>
+</section>

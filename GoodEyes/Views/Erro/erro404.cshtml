@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Página Não Encontrada";
+    ViewBag.LinkLogin = "/Cliente/Login";
+}
+
+<section id="erro">
+    <div id="errocont">
+        <div class="col1">
+            <h1>A PÁGINA NÃO FOI ENCONTRADA</h1>
+
+            <p>Você pode ter digitado a URL errada ou a página foi removida. Clique no link abaixo para voltar para home.</p>
+
+            <a href="/Home/Index" id="btnhome"> IR PARA A HOME</a>
+        </div>
+
+        <div class="col2">
+            <img src="~/imagens/erro2.png">
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("footer").css("margin", "0");
+            $("footer").css("background-color", "#fff");
+        });
+    </script>
+}  

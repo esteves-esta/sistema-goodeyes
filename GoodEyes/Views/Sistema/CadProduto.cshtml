@@ -1,0 +1,424 @@
+﻿
+
+@{
+    ViewBag.Title = "Cadastro do Produto";
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+<section class="titulo">
+
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+
+        <div>
+            @if (ViewBag.cod == "0")
+            {
+                <h2>Cadastro</h2>
+                ViewBag.modo = "cadastro";
+            }
+            else
+            {
+                <h2>Alterar</h2>
+                ViewBag.modo = "alterar";
+            }
+            <h1>Produto</h1>
+        </div>
+    </div>
+</section>
+
+<section class="cadProd cadcontainer">
+    <form action="CadProduto?cod=@ViewBag.cod&modo=@ViewBag.modo" method="post" class="formcadPro" enctype="multipart/form-data">
+
+        <h3>Especificações</h3>
+        <section class="linha linha1">
+            <div>
+                <label>Tipo do Produto</label>
+                <input type="hidden" name="tipoprod" id="tipoprod" value="@ViewBag.TipoPro" />
+                <select id="txtTipoProd" name="txtTipoProd" required autofocus>
+                    <option selected disabled>Escolha um tipo do produto</option>
+                    <option value="Óculos de Grau">Óculos de Grau</option>
+                    <option value="Óculos de Sol">Óculos de Sol</option>
+                    <option value="Lente">Lente</option>
+                </select>
+            </div>
+
+            <div class="cadOculos">
+                <label>Marca</label>
+                <input type="hidden" name="marca" id="marca" value="@ViewBag.mar" />
+                @Html.DropDownList("ListaDeMarcas", null, "Escolha a Marca", new { required = "required" })
+
+            </div>
+
+            <div class="cadLente">
+                <label>Marca</label>
+                <input type="hidden" name="marca" id="marca" value="@ViewBag.mar" />
+                @Html.DropDownList("ListaDeMarcasLente", null, "Escolha a Marca", new { required = "required" })
+
+            </div>
+
+            <div class="cadOculos">
+                <label>Material</label>
+                <input type="hidden" name="materialOc" id="materialOc" value="@ViewBag.MaterialOculos" />
+                <select id="txtMaterialOculos" name="txtMaterialOculos" required>
+                    <option selected disabled>Escolha o material</option>
+                    <option value="Ácrilico">Ácrilico</option>
+                    <option value="Madeira">Madeira</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Acetato">Acetato</option>
+                </select>
+            </div>
+
+            <div class="cadLente">
+                <label>Material</label>
+                <input type="hidden" name="materialL" id="materialL" value="@ViewBag.MaterialLente" />
+                <select id="txtMaterialLente" name="txtMaterialLente" required>
+                    <option selected disabled>Escolha o material</option>
+                    <option value="Ácrilico">Ácrilico</option>
+                    <option value="Crizal">Crizal</option>
+                    <option value="Policarbonato">Policarbonato</option>
+                </select>
+            </div>
+        </section>
+
+        <div class="cadOculos">
+            <section class="linha linha2">
+                <div>
+                    <label>Cor da Armação</label>
+                    <input type="hidden" name="corarma" id="corarma" value="@ViewBag.CorArm" />
+                    <select id="txtCorArm" name="txtCorArm" required>
+                        <option selected disabled>Escolha a cor</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Branco">Branco</option>
+                        <option value="Dourado">Dourado</option>
+                        <option value="Laranja">Laranja</option>
+                        <option value="Marrom">Marrom</option>
+                        <option value="Prata">Prata</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Transparente">Transparente</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelho">Vermelho</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Modelo da Armação</label>
+                    <input type="hidden" name="mode" id="mode" value="@ViewBag.Modelo" />
+                    <select id="txtModelo" name="txtModelo" required>
+                        <option selected disabled>Escolha o modelo</option>
+                        <option value="Aviador">Aviador</option>
+                        <option value="Gatinho">Gatinho</option>
+                        <option value="Oval">Oval</option>
+                        <option value="Quadrado">Quadrado</option>
+                        <option value="Redondo">Redondo</option>
+                        <option value="Retangular">Retangular</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Escolha a imagem do produto</label>
+                    @*<input type="hidden" name="img" id="img" value="@ViewBag.Imagem" />*@
+
+                    <div class="imgCadProd">
+                        <img id="imgprod" src="@ViewBag.Imagem"  />
+
+                        <input type="file" name="file" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="linha linha3">
+                <div>
+                    <label>Cor da Lente</label>
+                    <input type="hidden" name="lentecor" id="lentecor" value="@ViewBag.CorLente" />
+                    <select id="txtCorLente" name="txtCorLente" required>
+                        <option selected disabled>Escolha a cor</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Branco">Branco</option>
+                        <option value="Dourado">Dourado</option>
+                        <option value="Laranja">Laranja</option>
+                        <option value="Marrom">Marrom</option>
+                        <option value="Prata">Prata</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Transparente">Transparente</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelho">Vermelho</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Tratamento da Lente</label>
+                    <input type="hidden" name="trataOc" id="trataOc" value="@ViewBag.TratamentoOculos" />
+                    <select id="txtTratamentoOculos" name="txtTratamentoOculos" required>
+                        <option selected disabled>Escolha o tratamento da lente</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Polarizada">Polarizada</option>
+                        <option value="Espelhada">Espelhada</option>
+                        <option value="Degradê">Degradê</option>
+                    </select>
+                </div>
+            </section>
+
+            <h3>Medidas</h3>
+            <section class="linha linha4">
+                <div>
+                    <label>Altura da Lente</label>
+                    <input type="text" name="txtAltura" id="txtAltura" min="1" value="@ViewBag.Altura" required>
+                </div>
+
+                <div>
+                    <label>Tamanho da Ponte</label>
+                    <input type="text" name="txtTamanho" id="Tamanho" min="1" value="@ViewBag.Tamanho" required>
+                </div>
+
+                <div>
+                    <label>Comprimento da Haste</label>
+                    <input type="text" name="txtComprimento" id="txtComprimento" min="1" value="@ViewBag.Comprimento" required>
+                </div>
+            </section>
+
+            <h3>Classificação</h3>
+            <section class="linha linha5">
+                <div>
+                    <label>Faixa Etária</label>
+                    <input type="hidden" name="faixa" id="faixa" value="@ViewBag.FaixaEtaria" />
+                    <select id="txtFaixa" name="txtFaixa" required>
+                        <option selected disabled>Escolha uma opção</option>
+                        <option value="0-2">0 a 2 anos</option>
+                        <option value="2-5">2 a 5 anos</option>
+                        <option value="5-10">5 a 10 anos</option>
+                        <option value="10-15">10 a 15 anos</option>
+                        <option value="15-25">15 a 25 anos</option>
+                        <option value="25-35">25 a 35 anos</option>
+                        <option value="35-45">35 a 45 anos</option>
+                        <option value="45-65">45 a 65 anos</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Gênero</label>
+                    @*<input type="hidden" name="rdgen" id="rdgen" value="@ViewBag.gen" />
+                        <label class="oplabel"><input type="radio" name="rdgenero" class="rdgenero" value="Feminino" required checked>Feminino</label>
+                        <label class="oplabel"><input type="radio" name="rdgenero" class="rdgenero" value="Masculino" required>Masculino</label>*@
+
+                    <input type="hidden" name="gen" id="gen" value="@ViewBag.genF" />
+                    <select id="rdgen" name="rdgen" required>
+                        <option selected disabled>Escolha uma opção</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                    </select>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="cadLente">
+            <section class="linha linha2 cadLente">
+
+
+                <div>
+                    <input type="hidden" name="trata" id="trata" value="@ViewBag.tratamento" />
+
+                    <label>Tratamento da Lente</label>
+
+                    <select class="lentesTratamento" id="tratamento" name="tratamento" multiple>
+                        <option value="Antiabrasivo">Antiabrasivo</option>
+                        <option value="Fotosensível">Fotosensível</option>
+                        <option value="Antirreflexo">Antirreflexo</option>
+                        <option value="ProteçãoUVA/UVB">ProteçãoUVA/UVB</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Tratamentos da Lente Escolhidos</label>
+                    <select class="lentesTratamento" id="trataEscolhida" name="trataEscolhida" multiple>
+
+                    </select>
+                </div>
+
+                <div>
+                    <label>Tipo do Foco</label>
+
+                    <input type="hidden" name="foco" id="foco" value="@ViewBag.foco" />
+                    <select id="rdFoco" name="rdFoco" required>
+                        <option selected disabled>Escolha uma opção</option>
+                        <option value="Monofocal">Monofocal</option>
+                        <option value="Multifocal">Multifocal</option>
+                    </select>
+                </div>
+            </section>
+        </div>
+
+
+        <h3>Dados para venda</h3>
+        <section class="linha">
+
+            <div>
+                <label>Preço Unitário</label>
+                <input type="text" name="txtPreco" id="txtPreco" value="@ViewBag.Preco" required>
+            </div>
+
+            <div>
+                <label>Quantidade</label>
+                <input type="number" name="txtQtde" id="txtQtde" value="@ViewBag.Qtde" required>
+            </div>
+
+            <div>
+                <label>Garantia</label>
+                <input type="hidden" name="garantia" id="garantia" value="@ViewBag.Garantia" />
+                <select id="txtGarantia" name="txtGarantia" required>
+                    <option selected disabled>Escolha uma opção</option>
+                    <option>1 ano</option>
+                    <option>6 meses</option>
+                </select>
+            </div>
+        </section>
+
+        <input type="submit" name="btnCadPro" id="btnCadPro" class="btnCad" value="Cadastrar">
+    </form>
+</section>
+
+@section scripts{
+    <script>
+
+
+        $(document).ready(function () {
+            //preco input
+            $('#txtPreco').mask("#.##0,00", { reverse: true });
+
+
+            //Esconder secoes do tipo de produto opostos
+            $(".cadLente").hide();
+            $(".cadOculos").hide();
+
+
+            $("#txtTipoProd").change(function () {
+                var tipo = $("#txtTipoProd").val();
+                if (tipo == 'Lente') {
+                    $(".cadOculos").hide();
+                    $(".cadLente").show();
+
+                    //tira propriedade requirido dos inputs e selects de oculos que
+                    //estao escondidos para o usuario poder enviar formularios
+                    $(".cadOculos :input").prop('required', null);
+                    $(".cadOculos select").prop('required', null);
+                    //adiciona required em lente se usuario ficou mudando de escolha
+                }
+                else if (tipo == 'Óculos de Grau' || tipo == 'Óculos de Sol') {
+                    $(".cadOculos").show();
+                    $(".cadLente").hide();
+
+                    $(".cadLente :input").prop('required', null);
+                    $(".cadLente select").prop('required', null);
+                }
+            });
+
+
+            //traz imagem do produto na tela
+            $("input[type='file']").change(function (e) {
+
+                for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+
+                    var file = e.originalEvent.srcElement.files[i];
+
+                    var reader = new FileReader();
+                    reader.onloadend = function () {
+                        $("#imgprod").attr("src", reader.result);
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            atualizaSelect("#foco", "rdFoco");
+            atualizaSelect("#gen", "rdgen");
+
+            atualizaSelect("#tipoprod", "txtTipoProd");
+
+            var tipo = $("#txtTipoProd").val();
+            if (tipo == 'Lente') {
+                $(".cadOculos").hide();
+                $(".cadLente").show();
+
+                //tira propriedade requirido dos inputs e selects de oculos que
+                //estao escondidos para o usuario poder enviar formularios
+                $(".cadOculos :input").prop('required', null);
+                $(".cadOculos select").prop('required', null);
+                //adiciona required em lente se usuario ficou mudando de escolha
+            }
+            else if (tipo == 'Óculos de Grau' || tipo == 'Óculos de Sol') {
+                $(".cadOculos").show();
+                $(".cadLente").hide();
+
+                $(".cadLente :input").prop('required', null);
+                $(".cadLente select").prop('required', null);
+            }
+
+            atualizaSelect("#marca", "ListaDeMarcas");
+            atualizaSelect("#marca", "ListaDeMarcasLente");
+            atualizaSelect("#materialL", "txtMaterialLente");
+            atualizaSelect("#corarma", "txtCorArm");
+            atualizaSelect("#mode", "txtModelo");
+            atualizaSelect("#lentecor", "txtCorLente");
+            atualizaSelect("#trataOc", "txtTratamentoOculos");
+            atualizaSelect("#garantia", "txtGarantia");
+            atualizaSelect("#materialOc", "txtMaterialOculos");
+
+            if ($("#faixa").val() != "") {
+                $("select[name='txtFaixa'] option").each(function () {
+                    if ($("#faixa").val() == $(this).val()) {
+                        $(this).prop('selected', 'selected');
+
+                    }
+                });
+            }
+
+            var $titulo = $(".titulo h2").text();
+            if ($titulo == "Alterar") {
+                $("input[type='file']").prop('required', null);
+                $('#btnCadPro').val("Alterar");
+                $('#btnCadPro').attr('id', 'edicao');
+            }
+
+            //from : http://jsfiddle.net/cs6Xb/
+            $('#tratamento').click(function () {
+                $('#tratamento option:selected').appendTo('#trataEscolhida');
+                $("#trataEscolhida option").each(function () {
+                    $(this).attr('value', $(this).text());
+                });
+            });
+
+            $('#trataEscolhida').click(function () {
+                $('#trataEscolhida option:selected').appendTo('#tratamento');
+            });
+
+
+            atualizaSelect("#trata", "trataEscolhida");
+            var tratamentolentes = new Array();
+            tratamentolentes = $("#trata").val().split(' ');
+            for (var i = 0; i < tratamentolentes.length; i++) {
+                $("<option>" + tratamentolentes[i] + "</option>").appendTo("#trataEscolhida");
+                $('#tratamento option').each(function () {
+                    if ($(this).val() == tratamentolentes[i]) {
+                        $(this).remove();
+                    }
+                }); 
+            } 
+           
+        });
+
+
+    </script>
+}
+
