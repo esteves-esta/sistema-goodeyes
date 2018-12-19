@@ -75,6 +75,7 @@ Para atender a estes dois tipos de usuários o sistema possui as seguintes funci
 ![PÁGINA DE CADASTRO DE PRODUTOS](https://github.com/esteves-esta/sistema-goodeyes/blob/master/telasDoSistema/PAG%2019%20CAD%20PRODUTO.png "PÁGINA DE CADASTRO DE PRODUTOS")
 
 ---
+
 ### PÁGINA DE CONSULTA DE ESTOQUE
 *Na página de consulta o funcionário poderá pesquisar produtos por tipo, marca, material e preço. Alem disso ele poderá consulta as informações de todos os produtos cadastros em detalhe ao clicar no botão Detalhes, também podendo edita-los ou deleta-los.*
 
