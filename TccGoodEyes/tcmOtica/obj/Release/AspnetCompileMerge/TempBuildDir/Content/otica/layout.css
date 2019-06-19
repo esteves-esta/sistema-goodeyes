@@ -1,0 +1,302 @@
+﻿/*
+    PÁGINA LAYOUT HEADER E FOOTER
+
+*/
+
+
+/*HEADER*/
+
+.feather {
+    vertical-align: bottom;
+}
+
+#logo {
+    width: 85%;
+}
+header {
+    height: 17vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+header div {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header li {
+    display: inline-block;
+
+}
+
+    header li a {
+        display: inline-block;
+        color: var(--azul-primario);
+        text-decoration: none;
+        font-weight: bold;
+        padding-left: 15px;
+        transition: ease all .5s;
+        font-size: 1em;
+    }
+
+.links:hover a {
+    color: var(--azul-claro2);
+}
+
+.links a:hover {
+    color: var(--azul-primario);
+}
+
+#itenscarrinho {
+    vertical-align: super;
+}
+
+
+.menudrop {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+}
+
+.menudrop li{
+    display:block;
+}
+
+.menudrop a {
+    color: var(--azul-primario);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/*.menudrop a:hover {
+    background-color: var(--azul-claro);
+}*/
+
+.dropdown:hover .key {
+    color: var(--azul-secundario);
+}
+
+.dropdown:hover .menudrop {
+    display: block;
+}
+
+
+
+/* ARTICLE */
+article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+article > section {
+    width: 80vw;
+}
+
+/*FOOTER*/
+
+footer {
+    margin-top: 10%;
+    color: var(--azul-secundario);
+    background-color: var(--azul-claro);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footerLinha {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer a {
+    color: var(--azul-secundario);
+    text-decoration: none;
+    transition: all ease-in-out .3s;
+    border-bottom: 2px solid var(--azul-claro);
+}
+
+footer a:hover {
+    font-weight: 500;
+    border-bottom: 2px solid var(--azul-secundario);
+}
+
+footer h4 {
+    margin-bottom: 30px;
+}
+
+footer ul{
+    line-height:1.8em;
+}
+
+footer li {
+    font-size:.9em;
+}
+
+
+.fotInfo{
+    margin-bottom: 80px;
+}
+
+.ajustecontainer {
+    width:80vw;
+    padding:5% 0;
+}
+
+.creditos {
+    margin-top: 15px;
+    font-size: .85em;
+}
+
+
+
+
+/*
+    MENU RESPONSIVO
+*/
+
+/* Hide the link that should open and close the topnav on small screens */
+.links .icon {
+    display: none;
+}
+.key{
+    cursor:default;
+}
+/* MENU RESPONSIVO*/
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 970px) {
+    .links li a {
+        display: none;
+    }
+
+    .links a.icon {
+        display: block;
+    }
+
+    .links.responsive {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 100px;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.5s;
+        text-align: center;
+        padding: 5%;
+    }
+
+    .links.responsive a.icon {
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+        .links.responsive li a {
+            display: block;
+            padding-left: 0px;
+        }
+
+    .links.responsive li {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        letter-spacing: 1px;
+    }
+
+    .links.responsive svg {
+        display:none;
+    }
+
+   /* .responsive #iconeusuario::before {
+        content: "LOGIN / CADASTRO";
+    }
+
+    .responsive #carrinhoicone::before{
+        content:"CARRINHO DE COMPRAS";
+    }*/
+
+    #logo {
+        width: 80%;
+    }
+
+    /*----------------*/
+
+
+    .menudrop {
+        display: none;
+    }
+
+    .menudrop {
+        position: relative;
+        background-color: #fff;
+        box-shadow: none;
+        margin-top: 15px;
+        
+    }
+
+    .menudrop a {
+        color: var(--azul-claro2);
+        padding: 0px;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    .menudrop li{
+        padding:0px;
+    }
+
+    .dropdown:hover .menudrop {
+        display: block;
+    }
+
+    .dropdown:hover .key {
+        color: var(--azul-secundario);
+    }
+
+    .menudrop a:hover {
+        background-color: #fff;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .titulo h2 {
+        font-size: 1.2em;
+    }
+
+    .titulo {
+        padding: 6vw;
+    }
+
+}
+
+
+
+
+
+
+

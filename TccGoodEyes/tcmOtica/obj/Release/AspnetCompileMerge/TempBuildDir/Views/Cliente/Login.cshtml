@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Login/Cadastro";
+}
+
+<section class="titulo logintitulo">
+    <div>
+        <h2>LOGIN</h2>
+        <h2>CADASTRO</h2>
+    </div>
+</section>
+
+
+<section class="logincont">
+    <h3 id="erroNoti">@ViewBag.MsgError</h3>
+    <section class="col1 cols">
+        <form action="~/Cliente/Login" method="post">
+            <label>EMAIL</label>
+            <input type="email" name="txtEmail" id="txtEmail" required autofocus>
+            <label>SENHA</label>
+            <input type="password" name="txtSenha" id="txtSenhaLogin" required>
+            <a id="esqueceu" href="RedefinirSenha">Esqueceu a senha?</a>
+
+            <input type="submit" name="btnEntrar" id="btnEntrar" value="Entrar">
+        </form>
+    </section>
+
+
+    <section class="col2 cols">
+        <p>
+            Cadastre-se para  poder realizar compras,
+            acompanhar seus pedidos e receber promoções e descontos.
+        </p>
+
+        <a href="/Cliente/Cadastro?modo=cad" class="btnNormal">Cadastre-se</a>
+    </section>
+</section>

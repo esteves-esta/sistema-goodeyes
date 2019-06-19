@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro do Fornecedor";
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+
+<section class="titulo">
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-dollar-sign"
+             viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+
+
+        <div>
+            @if (ViewBag.cod == "0")
+            {
+                <h2>Cadastro</h2>
+                ViewBag.modo = "cadastro";
+            }
+            else
+            {
+                <h2>Alterar</h2>
+                ViewBag.modo = "alterar";
+            }
+            <h1>Fornecedor</h1>
+        </div>
+    </div>
+</section>
+
+<section class="cadForn cadcontainer">
+    <form action="CadFornecedor?cod=@ViewBag.cod&modo=@ViewBag.modo" method="post" id="formcadForn">
+
+        <h3>Dados</h3>
+        <section class="cad">
+            <section class="cadcoluna col1">
+                <div>
+                    <label>Nome <em>*</em></label>
+                    <input type="text" name="txtNome" id="txtNome" value="@ViewBag.NomeForn" required autofocus>
+                </div>
+
+                <div>
+                    <label>Sobrenome<em>*</em></label>
+                    <input type="text" name="txtSobrenome" id="txtSobrenome" value="@ViewBag.SobreForn" required>
+                </div>
+
+            </section>
+
+            <section class="cadcoluna col2">
+                <label>Email<em>*</em></label>
+                <input type="email" name="txtEmail" id="txtEmail" required value="@ViewBag.EmailForn">
+
+                <label>Telefone</label>
+                <input type="tel" name="txtTel" id="txtTel" value="@ViewBag.TelForn">
+            </section>
+
+            <section class="cadcoluna col3">
+                <label>CNPJ<em>*</em></label>
+                <input type="text" name="txtCNPJ" id="txtCNPJ" value="@ViewBag.CNPJ" required>
+            </section>
+        </section> 
+        <input type="submit" name="btnCadForn" id="btnCadForn" class="btnCad" value="Cadastrar">
+    </form>
+</section>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+           //Mascara atraves do jQuery Plugin Mask
+            //http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html
+
+            $('#txtCNPJ').mask('00.000.000/0000-00', { reverse: true });
+            $('#txtTel').mask('(00) 0000-0000');
+
+            //tel
+            $('#txtTel').blur(function () {
+                ChecarInput($(this), 14);
+            });
+
+            //tel
+            $('#txtCNPJ').blur(function () {
+                ChecarInput($(this), 18);
+            });
+
+            //se cnpj e telefone não estiverem completos
+            //IRA CANCELAR O ENVIO DO FORMULARIO
+            $("#formcadForn").submit(function (e) {
+
+                if (ChecarInput($('#txtTel'), 14) === true) {
+                    $('#txtTel').focus();
+                    $('#txtTel').css("background-color", "#D3EDF0");
+                    alert("Digite um número válido");
+                    e.preventDefault();
+                    return false;
+                }
+                if (ChecarInput($('#txtCNPJ'), 18) === true) {
+                    $('#txtCNPJ').focus();
+                    $('#txtCNPJ').css("background-color", "#D3EDF0");
+                    alert("Digite um número válido");
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            var $titulo = $('.titulo h2').text();
+            if ($titulo == "Alterar") {
+                $('#btnCadForn').val("Alterar");
+                $('#btnCadForn').attr('id', 'edicao');
+            }
+
+        }); //document ready
+
+    </script>
+
+}

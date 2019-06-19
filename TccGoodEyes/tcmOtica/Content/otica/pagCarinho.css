@@ -1,0 +1,84 @@
+﻿
+.itenstable td, .itenstable tr, .itenstable th {
+    padding: 10px 15px; /*10PX 30PX*/
+}
+
+
+.itenstable td {
+    border-bottom: solid 1px #dedede;
+    font-size: .9em;
+    font-weight: 500;
+}
+
+.pedTitle {
+    letter-spacing: 1px;
+    color: var(--cinza);
+    font-size: .8em !important;
+}
+
+.itenstable th {
+    color: var(--cinza);
+    border-bottom: solid 1px #dedede;
+    text-transform: uppercase;
+    font-size: .8em;
+    text-align: left;
+    width: 15%;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.itenstable th:first-child {
+    width: 50%;
+}
+
+.itenstable img {
+    width: 30%;
+    margin-right: 25px;
+}
+
+
+.itenstable #txtQuant {
+    width: 50%;
+    margin-bottom: 0;
+}
+
+#iten {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+#iten p{
+    margin-bottom: 0;
+}
+
+.preco {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5% 0;
+}
+
+#respoQ{
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .itenstable th:nth-child(2), .itenstable td:nth-child(2), .itenstable th:nth-child(3), .itenstable td:nth-child(3) 
+    {
+        display: none;
+    }
+
+    #iten {
+        font-size: .7em;
+    }
+
+    #respoQ {
+        display: block;
+    }
+
+
+}

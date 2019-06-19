@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Erro Interno";
+}
+
+<section id="erro">
+    <div id="errocont">
+        <div class="col1">
+            <h1>OCORREU UM ERRO INTERNO</h1>
+
+            <p>
+                Ops, parece que nosso servidor encontrou um erro interno.
+                Por favor tente novamente ou entre em contato no email suporte@goodeyes.com.br
+            </p>
+
+            <a href="/Home/Index" id="btnhome"> IR PARA A HOME</a>
+        </div>
+
+        <div class="col2">
+            <img src="~/imagens/erro2.png">
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("footer").css("margin", "0");
+            $("footer").css("background-color", "#fff");
+        });
+    </script>
+}

@@ -1,0 +1,127 @@
+﻿@model tccGoodEyes.Models.ClienteModel
+
+@{
+    ViewBag.Title = "Minha Conta";
+}
+
+<section class="titulo">
+    <div>
+        <h2>Minha Conta</h2>
+        <h3>Olá, @Model.nome</h3>
+    </div>
+</section>
+
+@if (ViewBag.favorito.Count > 0) {
+    for (int i = 0; i < ViewBag.favorito.Count; i++) {
+<section>
+    <h3 id="erroNoti">@ViewBag.MsgError</h3>
+
+    <div class="avisoProduto">
+        <a href="/Cliente/FavoritoDeletar?cod=@ViewBag.favorito[i].cd_notificacao" class="fechar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </a>
+        <h4>
+            O produto @ViewBag.nomeProdutos[i] @ViewBag.favorito[i].cd_produto está disponível novamente.
+        </h4>
+        <p><a class="btnTerciario" href="/Produto/ProdutoSelecionado?cod=@ViewBag.favorito[i].cd_produto&erro=0">Clique aqui</a> para ser redirecionado a página deste produto.</p>
+    </div>
+</section>
+    }
+}
+
+<section class="contConta" id="editar">
+    
+    <div class="col1">
+        <div>
+            <h3>Dados de Acesso</h3>
+            <a class="btnTerciario"href="Cadastro?modo=AlterarDados">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
+                Editar Dados
+            </a>
+        </div>
+
+        <table class="infoPessoal">
+            <tr>
+                <td>NOME</td>
+                <td>@Model.nome</td>
+            </tr>
+            <tr>
+                <td>SOBRENOME</td>
+                <td>@Model.sobrenome</td>
+            </tr>
+            <tr>
+                <td>DATA DE NASCIMENTO</td>
+                <td>@Model.dt_nascimento</td>
+            </tr>
+            <tr>
+                <td>CPF</td>
+                <td>@Model.no_cpf</td>
+            </tr>
+            <tr>
+                <td>TELEFONE</td>
+                <td>@Model.no_tel</td>
+            </tr>
+            <tr>
+                <td>CELULAR</td>
+                <td>@Model.no_cel</td>
+            </tr>
+            <tr>
+                <td>EMAIL</td>
+                <td>@Model.email</td>
+            </tr>
+        </table>
+
+        <div>
+            <h3>Endereço de Entrega</h3>
+            <a class="btnTerciario" href="Cadastro?modo=AlterarEndereco">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
+                Editar endereço
+            </a>
+        </div>
+
+
+        <table class="infoPessoal">
+            <tr>
+                <td>RUA</td>
+                <td>@Model.nm_rua</td>
+            </tr>
+            <tr>
+                <td>NÚMERO</td>
+                <td>@Model.no_rua</td>
+            </tr>
+            <tr>
+                <td>CEP</td>
+                <td>@Model.no_cep</td>
+            </tr>
+            <tr>
+                <td>BAIRRO</td>
+                <td>@Model.bairro</td>
+            </tr>
+            <tr>
+                <td>COMPLEMENTO</td>
+                <td>@Model.complemento</td>
+            </tr>
+            <tr>
+                <td>CIDADE</td>
+                <td>@Model.cidade</td>
+            </tr>
+            <tr>
+                <td>ESTADO</td>
+                <td>@Model.estado</td>
+            </tr>
+            <tr>
+                <td>UF</td>
+                <td>@Model.sg_uf</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="col2">
+        <a href="MinhaConta?aviso=0" class="btnSecundario">Geral</a>
+        <a href="MeusPedidos" class="btnSecundario">Meus Pedidos</a>
+        <a href="~/Home/Atendimento" class="btnSecundario">Central de Atendimento</a>
+        <a href="Logout" class="btnSecundario">Sair</a>
+        <a href="ExcluirConta" class="btnSecundario" id="exclusao">EXCLUIR MINHA CONTA</a>
+    </div>
+</section>

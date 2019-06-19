@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Redefinir";
+}
+
+<section class="titulo">
+    <h2>Redefinição de senha</h2>
+</section>
+
+<section>
+
+    <p>Digite seu email e sua nova senha abaixo:</p>
+
+    <form action="Redefinir" method="post">
+
+        <label>Digite seu email:</label>
+        <input type="email" name="email" id="email" />
+
+        <label>Nova Senha<em>*</em></label>
+        <input type="password" name="txtSenha" id="txtSenha" required maxlength="8">
+        <div id="senhaCondicoes">Sua senha deve conter 8 caracteres.</div>
+
+        <label>Confirmar a nova senha<em>*</em></label>
+        <input type="password" name="txtConfSenha" id="txtConfSenha" required maxlength="8">
+        <span id="confirmesenha"></span>
+
+
+        <input type="submit" name="btnRedefinir" value="Enviar" />
+
+    </form>
+</section>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            //CONFIRMAÇÃO DA SENHA
+            var $senha = $("#txtSenha");
+            var $confsenha = $("#txtConfSenha");
+
+            $("#txtConfSenha").blur(function () {
+                if ($senha.val() !== $confsenha.val()) {
+                    //alert("Por favor, tenha certeza que as senhas são iguais");
+                    $senha.css("border-bottom", "1px solid salmon");
+                    $confsenha.css("border-bottom", "1px solid salmon");
+
+                    $confsenha.css("margin-bottom", "8px");
+                    $("#confirmesenha").text("Por favor, tenha certeza que as senhas são iguais");
+                }
+                else if ($senha.val() === $confsenha.val()) {
+                    $senha.css("border-bottom", "1px solid #d9d9d9");
+                    $confsenha.css("border-bottom", "1px solid #d9d9d9");
+
+                    $("#confirmesenha").text("");
+                }
+            });
+
+            //aviso ao digitar senha
+            $senha.focus(function () {
+                $("#senhaCondicoes").show();
+            });
+
+            $senha.blur(function () {
+                $("#senhaCondicoes").hide();
+            });
+
+            //SE SENHAS NÃO FOREM IGUAIS NOS DOIS CAMPOS
+            //IRA CANCELAR O ENVIO DO FORMULARIO
+            $("#formCadCli").submit(function (e) {
+                if ($senha.val() !== $confsenha.val()) {
+                    $confsenha.focus();
+                    alert("As senha não são iguais, por favor redigite.");
+
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            }); //document ready
+
+    </script>
+
+}

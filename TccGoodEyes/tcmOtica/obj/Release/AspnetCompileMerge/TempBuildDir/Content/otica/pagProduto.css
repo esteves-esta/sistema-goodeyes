@@ -1,0 +1,165 @@
+﻿.caminho {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: var(--cinza);
+    font-size: .9em;
+    border-top: 1px solid var(--azul-primario);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2%;
+    /*background-color: #D3EDF0;*/
+    margin-bottom: 50px;
+}
+
+.caminho p {
+    width: 80vw;
+    margin-bottom:0px;
+}
+
+#favorito {
+    font-size: .8em;
+    display: block;
+}
+
+.esgotado{
+    margin-top:25px;
+}
+
+
+#erroNoti {
+    display: none;
+}
+
+.caminho a {
+    color: var(--cinza);
+    text-decoration: none;
+}
+
+.caminho a:hover {
+    color: var(--azul-secundario);
+    transition: color ease .4s;
+}
+
+
+.feather-chevron-right {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+
+/*
+    PRODUTO
+    */
+.conteudo .col1 img{
+    width:500px;
+}
+
+.conteudo, .descri{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
+.precoInfo {
+    letter-spacing: 1px;
+    font-size: 1.8em;
+    font-weight: 500;
+    color: var(--azul-terciario);
+    line-height: 1em
+}
+
+.precoInfo span {
+    font-size: 0.5em;
+    vertical-align: super;
+    padding-right: 3px;
+}
+
+.cred {
+    color: var(--cinza-claro2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .8em;
+    margin-bottom:25px;
+}
+
+
+.descri {
+    width: 100%;
+    background-color: var(--azul-secundario);
+    justify-content: center;
+    margin-top: 4%;
+    padding: 5% 0;
+    color: var(--azul-claro);
+}
+
+.cont-descri {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cont-descri .col1 table {
+    display: inline-block;
+    margin-right:5%;
+}
+
+.cont-descri td {
+    padding: 10px 0;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.cont-descri td:first-child {
+    padding-right: 40px;
+    /*text-align: right;*/
+    color: var(--azul-claro2);
+}
+
+.cont-descri h3{
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+    font-size:1.2em;
+}
+
+.descri .col1 {
+    width: 750px;
+}
+
+.descri .col2 {
+    width: 30%;
+}
+
+.conteudo h5 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--azul-secundario);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.conteudo h2 {
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: var(--cinza-escuro);
+    margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .cont-descri td:first-child {
+        text-align: left;
+        width: 150px;
+    }
+
+    .cont-descri{
+        margin:25px 0
+    }
+}
+

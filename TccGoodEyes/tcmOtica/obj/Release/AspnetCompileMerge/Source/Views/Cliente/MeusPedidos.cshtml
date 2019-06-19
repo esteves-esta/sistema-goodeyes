@@ -1,0 +1,219 @@
+﻿@model tccGoodEyes.Models.PedidoSuperModel
+@{
+    ViewBag.Title = "Meus Pedidos";
+}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<section class="titulo">
+    <h2>Meus Pedidos</h2>
+</section>
+
+
+<section class="contConta meuspedidos">
+    <div class="col1">
+
+    <h3>@ViewBag.MsgError</h3>
+        @foreach (var ped in Model.pedidoModelLista)
+        {
+            <section id="pedido">
+                <div>
+                    <div id="pedidoTitulo">
+                        <h3>Pedido Nº @ped.cd_pedido</h3>
+                        <button class="btnTerciario btnDetalhe">+ Detalhes</button>
+                    </div>
+
+                    <table class="itenstable semdet">
+                        <tr>
+                            <td>DATA DO PEDIDO</td>
+                            <td>QTDE. DE ITENS</td>
+                            <td>TOTAL</td>
+                        </tr>
+
+                        <tr>
+                            <td>@ped.dt_pedido</td>
+                            <td>@ped.qt_item</td>
+                            <td>@ped.vl_total</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="detalhes">
+                    <section class="contPed2">
+                        <div class="rows">
+                            <div>
+                                <h4>Endereço de Entrega</h4>
+
+                                <ul>
+                                    <li>@Model.clienteModel.nm_rua, @Model.clienteModel.nm_rua,</li>
+                                    <li>@Model.clienteModel.complemento, @Model.clienteModel.bairro</li>
+                                    <li>
+                                        @Model.clienteModel.cidade,  @Model.clienteModel.estado- @Model.clienteModel.sg_uf
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4>Pagamento</h4>
+
+                                @foreach (var paga in Model.pagamentoModelLista)
+                                {
+                                    if (paga.cd_pedido == ped.cd_pedido)
+                                    {
+                                        if (!paga.tipo_pagamento.Contains("/"))
+                                        {
+                                            <ul>
+                                                <li>PAGO POR BOLETO</li>
+                                                <li>Código do boleto: @paga.tipo_pagamento</li>
+                                                <li>Parcelas: @paga.parcelamento</li>
+                                            </ul>
+                                        }
+                                        else
+                                        {
+                                            string[] pag = paga.tipo_pagamento.Split(' ');
+                                            ViewBag.info = pag;
+                                            ViewBag.nome = pag[0].Replace('-', ' ');
+                                            <ul>
+                                                <li>CARTÃO</li>
+                                                <li>Nome impresso no cartão: @ViewBag.nome</li>
+                                                <li>Número do cartão: @ViewBag.info[1]</li>
+                                                <li>Bandeira do cartão: @ViewBag.info[2]</li>
+                                                <li>Cód. de segurança: @ViewBag.info[3]</li>
+                                                <li>Validade do cartão: @ViewBag.info[4]</li>
+                                                <li>Parcelas: @paga.parcelamento</li>
+                                            </ul>
+                                        }
+                                    }
+                                }
+                                </div>
+                        </div>
+
+                        <div class="rows">
+
+                            <div>
+                                @foreach (var rece in Model.receitaModelLista)
+                                {
+
+                                    if (rece.cd_pedido == ped.cd_pedido)
+                                    {
+                                        string[] od = rece.olho_direito.Split(' ');
+                                        string[] oe = rece.olho_esquerdo.Split(' ');
+
+                                        <h4>Receita</h4>
+                                        <div class="tres">
+                                            <div>
+                                                <label>Data da Receita</label>
+                                                <p>@rece.dt_receita</p>
+                                            </div>
+
+                                            <div>
+                                                <label>Data da Validade</label>
+                                                <p>@rece.dt_validade</p>
+                                            </div>
+                                            <div>
+                                                <label>Nome do Oftalmo</label>
+                                                <p>@rece.nm_oftalmo @rece.sobrenome_oftalmo</p>
+                                            </div>
+                                            <div>
+                                                <label>Observação</label>
+                                                <p>@rece.observacao</p>
+                                            </div>
+                                        </div>
+
+
+                                        <table class="receita">
+                                            <tr>
+                                                <td></td>
+                                                <td><label>ESF.</label></td>
+                                                <td><label>CIL.</label></td>
+                                                <td><label>EIXO</label></td>
+                                                <td><label>ADIÇÃO</label></td>
+                                                <td title="Distância Pupilar"><label>D.P.</label></td>
+                                            </tr>
+
+
+                                            <tr>
+                                               
+                                                <td><label>OE</label></td>
+                                                @foreach (var e in oe) {
+                                                <td>@e</td>
+                                                }
+                                                <td>@rece.distancia_pupilar</td>
+                                                
+                                            </tr>
+
+                                            <tr>
+                                                <td><label>OD</label></td>
+                                                @foreach (var d in od)
+                                                {
+                                                    <td>@d</td>
+                                                }
+
+
+                                            </tr>
+                                        </table>
+                                    }
+                                }
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <table class="itenstable pedidotab">
+
+                        <tr>
+                            <th>Item</th>
+                            <th>Preço Uni.</th>
+                            <th>QTDE.</th>
+                            <th>Total</th>
+                        </tr>
+
+                        @foreach (var pro in Model.produtoModelLista)
+                        {
+                            if (pro.cd_pedido == ped.cd_pedido)
+                            {
+                                <tr>
+                                    <td id="iten">
+                                        <img src="@pro.caminho_imagem">
+                                        <p>@pro.nm_marca</p>
+                                        <p>@pro.descricao @pro.aspecto</p>
+                                    </td>
+                                    <td>@pro.vl_preco_unitario</td>
+                                    <td>@pro.qt_item</td>
+                                    <td>@pro.vl_subtotal</td>
+                                </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </section> <!-- termina pedido-->
+        }
+
+    </div>
+
+
+    <div class="col2">
+        <a href="MinhaConta?aviso=0" class="btnSecundario">Geral</a>
+        <a href="MeusPedidos" class="btnSecundario">Meus Pedidos</a>
+        <a href="~/Home/Atendimento" class="btnSecundario">Central de Atendimento</a>
+        <a href="Logout" class="btnSecundario">Sair</a>
+    </div>
+</section>
+
+@section scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".detalhes").hide();
+
+            $(".btnDetalhe").on("click", function () {
+                $(this).parent().parent().parent().find(".detalhes").toggle();
+                console.log($(this).parent().parent().parent().find(".detalhes"));
+
+            });
+
+        });
+    </script>
+}

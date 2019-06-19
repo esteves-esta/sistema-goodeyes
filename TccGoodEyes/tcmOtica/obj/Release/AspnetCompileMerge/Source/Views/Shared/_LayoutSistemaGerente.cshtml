@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Ótica GOODEYES</title>
+
+    @Styles.Render("~/Content/css")
+
+
+    <link rel="Shortcut Icon" href="/favicon3.png" type="image/x-icon" />
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <a href="/Sistema/Index"><img id="logo" src="/imagens/logo2.png"></a>
+
+            <ul class="links">
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="vector"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="feather feather-menu" style="fill:none;stroke-linejoin:round;stroke-width:2;stroke:currentColor"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg></i>
+                    </a>
+                </li>
+                <li>@*@Html.ActionLink("HOME", "Index", "Sistema")*@</li>
+                <li class="dropdown">
+                    <a class="key">CADASTRO</a>
+                    <ul class="menudrop">
+                        <li><a href="~/Sistema/CadFuncionario?cod=0&aviso=0">Funcionário</a></li>
+                        <li><a href="~/Sistema/CadFornecedor?cod=0&aviso=0">Fornecedor</a></li>
+                        <li><a href="~/Sistema/CadMarca?cod=0&aviso=0">Marca</a></li>
+                        <li><a href="~/Sistema/CadProduto?cod=0&aviso=0">Produto</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="key">CONSULTA</a>
+                    <ul class="menudrop">
+                        <li><a href="~/Sistema/ConsFuncionario?&aviso=0">Funcionário</a></li>
+                        <li><a href="~/Sistema/ConsFornecedor?&aviso=0">Fornecedor</a></li>
+                        <li><a href="~/Sistema/ConsMarca?&aviso=0">Marca</a></li>
+                        <li><a href="~/Sistema/ConsEstoque?&aviso=0">Estoque</a></li>
+                        <li><a href="~/Sistema/ConsCliente?aviso=0">Cliente</a></li>
+                        <li>@Html.ActionLink("Vendas", "ConsVendas", "Sistema")</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="Index" id="iconeusuario" name="iconeusuario">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        PÁGINA PRINCIPAL
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Cliente/Logout" title="Sair">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                        SAIR
+                    </a>
+                <li>
+            </ul>
+        </div>
+    </header>
+
+    <article id="container">
+
+        @RenderBody()
+
+    </article>
+
+    <footer>
+        <section class="footerLinha creditos">
+            <p>ÓTICAS GOODEYES</p>
+
+            <p>AVENIDA JUSCELINO KUBISCHECK 321 - LEOPOLDINA, SÃO PAULO | 1236-321</p>
+
+            <p>&copy; @DateTime.Now.Year COPYRIGHT GOODEYES</p>
+        </section>
+
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

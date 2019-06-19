@@ -1,0 +1,164 @@
+﻿@model IEnumerable<tccGoodEyes.Models.ClienteModel>
+
+@{
+    ViewBag.Title = "Consulta dos Clientes";
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+
+
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+
+<section class="titulo">
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+
+        <div>
+            <h2>Consulta</h2>
+            <h1>Clientes</h1>
+        </div>
+    </div>
+</section>
+
+
+<section class="consulta containerCli">
+
+    <section>
+        <h4>
+            <span>@ViewBag.QtdeCli</span>
+            Clientes Cadastrados
+        </h4>
+    </section>
+
+
+    <section class="pesquisa">
+
+        <h3>Pesquise por:</h3>
+
+        <form action="ConsCliente" method="post" class="horizontal pesquisa">
+
+
+            <div>
+                <label>Nome</label>
+                <input list="NomeCli" name="NomeCli">
+                <datalist id="NomeCli">
+                    @foreach (string i in ViewBag.ListCliente)
+                    {
+                        <option value="@i" />
+                    }
+                </datalist>
+            </div>
+
+            <div>
+                <label>CPF</label>
+                <input list="CPF" name="CPF">
+                <datalist id="CPF">
+                    @foreach (string i in ViewBag.ListCPF)
+                    {
+                        <option value="@i" />
+                    }
+                </datalist>
+            </div>
+
+
+            @*<input type="submit" name="btnPesquisa" id="btnPesquisa" value="Pesquisar" />*@
+        </form>
+
+    </section>
+
+    <div class="tabconsulta">
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    Cód.
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    CPF
+                </th>
+                <th>
+                    Celular
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th>
+                    Bairro
+                </th>
+                <th>
+                    Cidade
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Ações
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                        @Html.DisplayFor(modelItem => item.sobrenome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.no_cpf)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.no_cel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.bairro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sg_uf)
+                    </td>
+
+                    <td>
+                        <a class="btnTerciario" href="/Sistema/AlteraCliente?cod=@item.cd_cliente">Editar</a>
+                        <a class="btnTerciario" href="/Sistema/DetalheCliente?cod=@item.cd_cliente">Detalhes</a>
+                        @if (ViewBag.Gerente == 3)
+                        {
+                            <a class="btnTerciario excluir" href="/Sistema/ExcluirClie?cod=@item.cd_cliente">Deletar</a>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</section>
+
+
+@*@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+           
+
+        });
+    </script>
+}*@

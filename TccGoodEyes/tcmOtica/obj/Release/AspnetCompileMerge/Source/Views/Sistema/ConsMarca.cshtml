@@ -1,0 +1,116 @@
+﻿@model IEnumerable<tccGoodEyes.Models.FornecedorModel>
+
+@{
+    ViewBag.Title = "Consulta da Marca";
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+
+
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+<section class="titulo">
+
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-dollar-sign"
+             viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+
+
+        <div>
+            <h2>Consulta</h2>
+            <h1>Marca</h1>
+        </div>
+    </div>
+</section>
+
+
+<section class="consulta containerForn">
+
+    <section>
+        <h4>
+            <span>@ViewBag.Qtde</span>
+            Marcas
+        </h4>
+    </section>
+
+    <section class="pesquisa">
+
+        <h3>Pesquise por:</h3>
+
+        <form action="ConsMarca" method="post" class="horizontal pesquisa">
+
+            <div>
+                <label>Marcas de Óculos</label>
+                <select id="txtMarca" name="txtMarca">
+                    <option selected disabled>Escolha a Marca</option>
+                    @foreach (string i in ViewBag.ListaDeMarcas)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label>Marcas de Lente</label>
+                <select id="txtMarcaLente" name="txtMarcaLente">
+                    <option selected disabled>Escolha a Marca</option>
+                    @foreach (string i in ViewBag.ListaDeMarcasLentes)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+
+            @*<input type="submit" name="btnPesquisa" id="btnPesquisa" value="Pesquisar" />*@
+
+
+        </form>
+    </section>
+
+    <div class="tabconsulta">
+
+        <table class="table">
+            <tr>
+                <th>
+                    MARCA
+                </th>
+                <th>
+                    Cód. do Fornecedor
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    AÇÕES
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nm_marca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_fornecedor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                        @Html.DisplayFor(modelItem => item.sobrenome)
+                    </td>
+                    <td>
+                        <a class="btnTerciario" href="/Sistema/CadMarca?cod=@item.nm_marca&aviso=0">Editar</a>
+                        <a class="btnTerciario excluir" href="/Sistema/ExcluirMarca?cod=@item.nm_marca">Deletar</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</section>

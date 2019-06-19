@@ -1,0 +1,419 @@
+﻿/*
+    lembrar: bundle
+*/
+
+:root {
+    --cinza-claro: #d9d9d9;
+    --cinza-claro2: #808080;
+    --cinza: #606060;
+    --cinza-escuro: #353535;
+    --azul-claro: #D3EDF0;
+    --azul-claro2: #94d4dc;
+    --azul-primario: #38a7cc;
+    --azul-secundario: #2e85a3;
+    --azul-terciario: #006b95;
+    --verde: palegreen;
+    --vermelho: salmon;
+    --vermelho-escuro: #cb0b0b;
+    --preto: #000;
+}
+
+.produtopromocao h3 {
+    text-transform: uppercase;
+    color: var(--cinza);
+    letter-spacing: 1px;
+}
+
+
+
+.estiloAviso{
+    padding:10px 0;
+    letter-spacing:1px;
+}
+/* CSS PARA TODO O SITE*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Asap", Arial, sans-serif;
+}
+
+/*PARA COMPUTADORES TEREM A FONTE ARGUMENTUM*/
+
+@font-face {
+    font-family: "Asap";
+    src: url(/fonts/Asap-Regular.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url(/fonts/Asap-Medium.otf) format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url(/fonts/Asap-Bold.otf) format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url(/fonts/Asap-Italic.otf) format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+/*
+    TITULOS DAS PAGINAS
+*/
+
+
+.titulo {
+    color: #212121;
+    background-color: var(--azul-claro);
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    margin-bottom: 5%;
+}
+
+.titulo h3 {
+    /*margin-top: 15px;*/
+    color: var(--azul-primario);
+    font-weight: 500;
+    font-size: 1.9em;
+}
+
+
+.titulo h2 {
+    width: 80vw;
+    color: var(--azul-secundario);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+}
+
+    .titulo h1 {
+        width: 80vw;
+        color: var(--azul-terciario);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        word-spacing: 4px;
+        font-size: 2em;
+        height: 170px;
+    }
+
+.titulo .feather {
+    width: 70px;
+    stroke: var(--azul-terciario);
+    margin-right: 15px;
+}
+
+.tituloIcone {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 80vw;
+    height: 68px;
+}
+
+.tituloIcone h2, .tituloIcone h1 {
+    width:auto;
+}
+
+
+
+ul {
+    list-style: none;
+}
+
+section p {
+    line-height: 2em;
+    margin-bottom: 3%;
+}
+
+
+/*
+    INPUTS E BOTOES
+
+*/
+
+input, select {
+    display: block;
+    margin: 1% 0 2% 0;
+}
+
+
+label {
+    font-size: .8em;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    color: var(--cinza);
+    display: block;
+    /*font-weight:500;*/
+}
+
+.labeltitle{
+    margin-bottom:15px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[list],
+select,
+textarea {
+    width: 300px;
+    padding: 9px 15px;
+    font-size: 1em;
+    height: 40px;
+    outline: none;
+    border: solid 1px var(--cinza-claro);
+    transition: border-color ease .5s;
+    color: var(--cinza-escuro);
+    font-weight: 400;
+    letter-spacing: .1px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+input[type="file"] {
+    width: 200px;
+    align-self: flex-end;
+    height: 40px;
+    outline: none;
+    transition: border-color ease .5s;
+    color: var(--cinza-escuro);
+    font-weight: 400;
+    letter-spacing: .1px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
+
+.doisinput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.doisinput div, .doisinput input, .doisinput select {
+    width: 140px;
+}
+
+.doisinput input {
+    margin-bottom: 24px;
+}
+
+
+input[type="radio"], input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/*RETIRA BOTAO DE MAIS E MENOS NO INPUT DE NUMERO*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+/*ESTILO DE BOTAO OBRIGATORIO AO ESTAR INVALIDO, VALIDO E EM FOCO*/
+:required:focus {
+    border-bottom: solid 2px var(--verde);
+    outline: none;
+}
+
+:invalid:focus {
+    border-bottom: solid 2px var(--vermelho);
+    outline: none;
+}
+
+:valid:focus {
+    border-bottom: solid 2px var(--verde);
+    outline: none;
+}
+
+
+/*BOTAO PRINCIPAL*/
+input[type="submit"], .btnNormal {
+    background-color: var(--azul-primario);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px 24px;
+    width: 300px;
+    /*height: 40px;*/
+    outline: none;
+    font-size: .9em;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    border: 2px solid var(--azul-primario);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    /*margin-top: 10px;*/
+    letter-spacing: 1px;
+    transition: all ease .4s;
+}
+
+input [type="submit"]:active, .btnNormal:active {
+    background-color: var(--cinza-claro);
+    border: none;
+}
+
+input[type="submit"]:hover, .btnNormal:hover {
+    background-color: var(--azul-secundario);
+    border: 2px solid var(--azul-secundario);
+}
+.lentesTratamento{
+    height:100px;
+}
+
+/*BOTAO SECUNDARIO*/
+.btnSecundario {
+    display: block;
+    width: 300px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border-radius: 2px;
+    border: 2px solid var(--azul-secundario);
+    /*margin-bottom: 20px;*/
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--azul-secundario);
+    text-align: center;
+    transition: background-color ease .4s;
+    letter-spacing: 1px;
+}
+
+.btnSecundario:hover {
+    color: #fff;
+    background-color: var(--azul-secundario);
+}
+
+#exclusao {
+    border: 2px solid var(--vermelho-escuro);
+    background-color: var(--vermelho-escuro);
+    color: #fff;
+}
+
+#exclusao:hover {
+    background-color: #a90000;
+    border: 2px solid #a90000;
+}
+
+.btnTerciario {
+    /* display: block;*/
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--azul-secundario);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    transition: color ease .4s;
+    transition: border-color ease .4s;
+    letter-spacing: 1px;
+}
+
+    .btnTerciario:hover {
+        color: var(--azul-primario);
+        border-bottom: 2px solid var(--azul-primario);
+    }
+
+.excluir {
+    color: var(--vermelho-escuro);
+}
+
+.excluir:hover {
+    color: #a90000;
+    border-bottom: 2px solid #a90000;
+}
+
+    /*PLACEHOLDER*/
+:: -webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #87E1F5;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #87E1F5;
+}
+
+
+/*
+    TABELAS
+*/
+
+
+table{
+    border-spacing: 0px;
+    border: none;
+}
+
+.sistemaTabelas > div {
+    width: 300px;
+}
+
+.sistemaTabelas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sistemaTabelas table {
+    margin: 15px 0 25px 0;
+}
+
+.sistemaTabelas td, .sistemaTabelas th {
+    border-spacing: 0px;
+    border: none;
+}
+
+.sistemaTabelas td {
+    padding: 10px 20px;
+    border-bottom: solid 1px #dedede;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--cinza-escuro);
+}
+
+.sistemaTabelas th {
+    padding: 10px 20px;
+    color: var(--cinza-claro2);
+    border-bottom: solid 1px #dedede;
+    text-transform: uppercase;
+    font-size: .7em;
+    text-align: left;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.sistemaTabelas h4{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 45px;
+}

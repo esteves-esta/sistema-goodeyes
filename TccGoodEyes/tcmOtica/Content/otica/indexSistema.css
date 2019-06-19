@@ -1,0 +1,103 @@
+﻿.all {
+    width: 100%;
+    background-color: var(--azul-claro);
+    padding: 2% 0;
+    /*border-bottom:1px solid var(--azul-claro2);*/
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btnRela {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashInfo{
+    width:80vw;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.dashInfo p {
+    text-transform: uppercase;
+    color: var(--azul-primario);
+    letter-spacing: 3px;
+    font-size: .8em;
+    font-weight: 500;
+    line-height: 1em;
+}
+
+.dashitens {
+    color: var(--azul-secundario);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.dashitens span {
+    font-size: 2.2em;
+    font-weight: 400;
+}
+
+.dashitens .feather {
+    width: 35px;
+    margin-left: 15px;
+    stroke: var(--azul-claro2);
+    order: 2;
+}
+
+.tituloSistema h2, .tituloSistema h3 {
+    text-transform: uppercase;
+    color: var(--azul-terciario);
+    letter-spacing: 3px;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+.relatorio{
+    margin-top:25px;
+}
+
+.tituloSistema > div {
+    margin: 50px 0;
+}
+
+.tituloSistema table td,
+.tituloSistema table th {
+    padding: 15px 45px 15px 0;
+}
+
+.tituloSistema h4 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--azul-secundario);
+    font-size: .91em;
+}
+
+.tituloSistema table th {
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--cinza);
+    font-size:.8em;
+}
+
+.tituloSistema table td {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cinza-escuro);
+    font-size: 1.1em;
+    font-weight:500;
+}
+
+@media screen and (max-width: 600px) {
+    .dashInfo > div {
+        width: 150px;
+        margin-top: 25px;
+    }
+}

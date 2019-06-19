@@ -1,0 +1,464 @@
+﻿@model IEnumerable<tccGoodEyes.Models.ProdutoModel>
+
+<section class="titulo conOculos">
+    <div>
+
+        @switch (ViewBag.tipoConsulta)
+        {
+            case "grau":
+                ViewBag.Title = "Óculos de grau";
+                <h2>ÓCULOS DE GRAU</h2>
+                break;
+            case "sol":
+                ViewBag.Title = "Óculos de sol";
+                <h2>ÓCULOS DE SOL</h2>
+                break;
+            default:
+                <h2>ÓCULOS</h2>
+                break;
+        }
+
+        @switch (ViewBag.genero)
+        {
+            case "fem":
+                <h3>FEMININO</h3>
+                break;
+            case "mas":
+                <h3>MASCULINO</h3>
+                break;
+        }
+
+    </div>
+</section>
+
+<a class="iconFiltro">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+    FILTRO DE PESQUISA
+</a>
+<section class="contTipo">
+    <div class="col1 filtro">
+        <form action="ConsultaProdutos?tipo=@ViewBag.tipoConsulta&genero=@ViewBag.genero" method="post" class="formConPro">
+            <p>Filtrar por:</p>
+            <h4>MARCAS</h4>
+            <div class="opcoes">
+                <input type="hidden" name="marca" id="marca" value="@ViewBag.marca" />
+                <label>
+                    <input type="radio" name="checkMarca" id="checkMarca" value="todos">
+                    Todos
+                </label>
+                @foreach (var i in ViewBag.listaMarca)
+                {
+                    <label>
+                        <input type="radio" name="checkMarca" id="checkMarca" value="@i">
+                        @i
+                    </label>
+                }
+            </div>
+
+            @*<h4>GÊNERO</h4>
+                <div class="opcoes">
+                    <label>
+                        <input type="checkbox" name="txtGenero" id="txtGenero" value="Feminino">
+                        Feminino
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="txtGenero" id="txtGenero" value="Masculino">
+                        Masculino
+                    </label>
+                </div>*@
+
+            <h4>Faixa Etária</h4>
+            <div class="opcoes">
+                <input type="hidden" name="faixa" id="faixa" value="@ViewBag.faixa" />
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="0-2">
+                    0 a 2 anos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="2-5">
+                    2 a 5 anos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="5-10">
+                    5 a 10 anos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="10-15">
+                    10 a 15 anos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="15-25">
+                    15 a 25 anos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="25-35">
+                    25 a 35 anos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="35-45">
+                    35 a 45 anos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="txtFaixaEtaria" id="txtFaixaEtaria" value="45-65">
+                    45 a 65 anos
+                </label>
+            </div>
+
+            <h4>Cor da Armação</h4>
+            <div class="opcoes">
+                <input type="hidden" name="corarm" id="corarm" value="@ViewBag.corarm" />
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Amarelo">
+                    Amarelo
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Azul">
+                    Azul
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Branco">
+                    Branco
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Dourado">
+                    Dourado
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Laranja">
+                    Laranja
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Marrom">
+                    Marrom
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Prata">
+                    Prata
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Preto">
+                    Preto
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Rosa">
+                    Rosa
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Transparente">
+                    Transparente
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Verde">
+                    Verde
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Vermelho">
+                    Vermelho
+                </label>
+            </div>
+
+
+            <h4>Modelo</h4>
+            <div class="opcoes">
+                <input type="hidden" name="modelo" id="modelo" value="@ViewBag.modelo" />
+                <label>
+                    <input type="checkbox" name="checkModelo" id="checkModelo" value="Aviador">
+                    Aviador
+                </label>
+                <label>
+                    <input type="checkbox" name="checkModelo" id="checkModelo" value="Gatinho">
+                    Gatinho
+                </label>
+                <label>
+                    <input type="checkbox" name="checkModelo" id="checkModelo" value="Oval">
+                    Oval
+                </label>
+                <label>
+                    <input type="checkbox" name="checkModelo" id="checkModelo" value="Quadrado">
+                    Quadrado
+                </label>
+                <label>
+                    <input type="checkbox" name="checkModelo" id="checkModelo" value="Redondo">
+                    Redondo
+                </label>
+                <label>
+                    <input type="checkbox" name="checkModelo" id="checkModelo" value="Retangular">
+                    Retangular
+                </label>
+            </div>
+
+            <h4>Material</h4>
+            <div class="opcoes">
+                <input type="hidden" name="mate" id="mate" value="@ViewBag.mate" />
+                <label>
+                    <input type="checkbox" name="checkMaterial" id="checkMaterial" value="Acrílico">
+                    Acrílico
+                </label>
+                <label>
+                    <input type="checkbox" name="checkMaterial" id="checkMaterial" value="Madeira">
+                    Madeira
+                </label>
+                <label>
+                    <input type="checkbox" name="checkMaterial" id="checkMaterial" value="Metal">
+                    Metal
+                </label>
+                <label>
+                    <input type="checkbox" name="checkMaterial" id="checkMaterial" value="Acetato">
+                    Acetato
+                </label>
+            </div>
+
+            <h4>Cor da Lente</h4>
+            <div class="opcoes">
+                <input type="hidden" name="corlente" id="corlente" value="@ViewBag.corlente" />
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Amarelo">
+                    Amarelo
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Azul">
+                    Azul
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Branco">
+                    Branco
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Dourado">
+                    Dourado
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Laranja">
+                    Laranja
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Marrom">
+                    Marrom
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Prata">
+                    Prata
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Preto">
+                    Preto
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorArmacao" id="checkCorArmacao" value="Rosa">
+                    Rosa
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Transparente">
+                    Transparente
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Verde">
+                    Verde
+                </label>
+                <label>
+                    <input type="checkbox" name="checkCorLente" id="checkCorLente" value="Vermelho">
+                    Vermelho
+                </label>
+            </div>
+
+            <h4>Tratamento da Lente</h4>
+            <div class="opcoes">
+                <input type="hidden" name="trat" id="trat" value="@ViewBag.trat" />
+                <label>
+                    <input type="checkbox" name="checkTatamento" id="checkTatamento" value="Normal">
+                    Normal
+                </label>
+                <label>
+                    <input type="checkbox" name="checkTatamento" id="checkTatamento" value="Polarizada">
+                    Polarizada
+                </label>
+                <label>
+                    <input type="checkbox" name="checkTatamento" id="checkTatamento" value="Espelhada">
+                    Espelhada
+                </label>
+                <label>
+                    <input type="checkbox" name="checkTatamento" id="checkTatamento" value="Degradê">
+                    Degradê
+                </label>
+            </div>
+
+
+
+            <h4>Preço</h4>
+            <div class="opcoes">
+                <input type="hidden" name="preco" id="preco" value="@ViewBag.preco" />
+                <label>
+                    <input type="checkbox" name="checkPreco" id="checkPreco" value="0-100">
+                    até R$100
+                </label>
+                <label>
+                    <input type="checkbox" name="checkPreco" id="checkPreco" value="100-200">
+                    de R$100 a R$200
+                </label>
+                <label>
+                    <input type="checkbox" name="checkPreco" id="checkPreco" value="200-300">
+                    de R$200 a R$300
+                </label>
+                <label>
+                    <input type="checkbox" name="checkPreco" id="checkPreco" value="300-400">
+                    de R$300 a R$400
+                </label>
+                <label>
+                    <input type="checkbox" name="checkPreco" id="checkPreco" value="400-500">
+                    de R$400 a R$500
+                </label>
+                <label>
+                    <input type="checkbox" name="checkPreco" id="checkPreco" value="600-10000">
+                    a partir de R$600
+                </label>
+            </div>
+
+
+
+        </form>
+    </div>
+
+    <div class="col2 procontainer">
+
+        @foreach (var item in Model)
+        {
+            <a href="/Produto/ProdutoSelecionado?cod=@item.cd_produto&erro=0">
+                <div class="produto" name="produto">
+                    <div class="produtoimg" name="produtoimg">
+                        <img src="@item.caminho_imagem" alt="@item.nm_marca">
+                    </div>
+                    <p class="tituloProduto">@item.nm_marca @item.cd_produto</p>
+                    <p class="precoPro">@item.vl_preco_unitario</p>
+                </div>
+            </a>
+        }
+
+    </div>
+
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $("form input").click(function () {
+               // $("form").submit();
+            });
+
+                // submit formulario toda vez que seleciona um input
+    //PARA CONSULTA DE PRODUTOS
+    //$(".opcoes").each(function () {
+    //    if ($(this).find('input')) {
+    //        $(this).click(function () {
+
+    //            $("form").submit();
+    //        });
+    //    }
+    //});
+
+            $(".iconFiltro").click(function () {
+                var x = $('.formConPro');
+                if (x.hasClass("filtroRespon") == false) {
+                    x.addClass("filtroRespon");
+                    console.log("asdf");
+                } else {
+                    x.removeClass("filtroRespon");
+                    console.log("ss");
+                }
+            });
+
+
+            var $tituloTipo = $('h2').text();
+            var $tituloGen = $('h3').text();
+
+            switch ($tituloTipo) {
+                case "ÓCULOS DE GRAU":
+
+                    switch ($tituloGen) {
+                        case "FEMININO":
+                            $('.conOculos').css({
+                                backgroundImage: 'url("/imagens/grauwoman2.jpg")',
+                                backgroundSize: 'cover'
+                            });
+                            break;
+                        case "MASCULINO":
+                            $('.conOculos').css({
+                                backgroundImage: 'url("/imagens/pexels-photo-212290.jpeg")',
+                                backgroundSize: 'cover'
+                            });
+
+                            $('.conOculos h2').css('color', 'var(--azul-claro2)');
+                            $('.conOculos h3').css('color', 'var(--azul-claro)');
+                            break;
+                    }
+                    break;
+
+                case "ÓCULOS DE SOL":
+
+                    switch ($tituloGen) {
+                        case "FEMININO":
+                            $('.conOculos').css({
+                                backgroundImage: 'url("/imagens/pexels-photo-1252982.jpeg")',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center'
+                            });
+                            break;
+                        case "MASCULINO":
+                            $('.conOculos').css({
+                                backgroundImage: 'url("/imagens/brooke-cagle-274488-unsplash.jpg")',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center'
+                            });
+                            break;
+                    }
+
+
+                    break;
+            }
+            pegaValor("#marca", "checkMarca");
+            pegaValor("#faixa", "txtFaixaEtaria");
+            pegaValor("#corarm", "checkCorArmacao");
+            pegaValor("#modelo", "checkModelo");
+            pegaValor("#mate", "checkMaterial");
+            pegaValor("#corlente", "checkCorLente");
+            pegaValor("#trat", "checkTatamento");
+            pegaValor("#preco", "checkPreco");
+
+            atualizaInput("#marca", "checkMarca");
+            atualizaInput("#faixa", "txtFaixaEtaria");
+            atualizaInput("#corarm", "checkCorArmacao");
+            atualizaInput("#modelo", "checkModelo");
+            atualizaInput("#mate", "checkMaterial");
+            atualizaInput("#corlente", "checkCorLente");
+            atualizaInput("#trat", "checkTatamento");
+            atualizaInput("#preco", "checkPreco");
+        });
+
+        function pegaValor(escondido, checkbox) {
+            $("input[name='" + checkbox + "']").change(function () {
+                $(escondido).val($("input[name='" + checkbox + "']:checked").val());
+                $("form").submit();
+            });
+        }
+
+        function atualizaInput(escondido, input) {
+            if ($(escondido).val() != "") {
+                $("input[name='" + input + "']").each(function () {
+                    if ($(this).val().toLowerCase() == $(escondido).val().toLowerCase()) {
+                        $(this).prop('checked', 'checked');
+                    }
+                });
+            }
+        }
+
+    </script>
+}

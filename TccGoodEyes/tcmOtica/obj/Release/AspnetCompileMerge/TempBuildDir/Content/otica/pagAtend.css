@@ -1,0 +1,58 @@
+﻿/*
+    PÁGINA DE ATENDIMENTO
+*/
+.containerflex {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.atend {
+    flex-basis: 50%;
+}
+
+.atend h3 {
+    font-size: 1.2em;
+    margin-bottom: 5%;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.atend h3:hover {
+    color: var(--azul-secundario);
+}
+
+.atend p {
+    text-align: justify;
+    line-height: 1.8em;
+    margin-bottom: 8%;
+}
+
+.fale p {
+    line-height: 2em;
+    font-size: .8em;
+}
+
+.fale h3 {
+    font-size: 1.2em;
+    margin-bottom: 5%;
+}
+
+
+.fale h4 {
+    margin-top: 8%;
+    font-size: .9em;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+
+    .atend {
+        flex-basis: 100%;
+    }
+
+    .containerflex div {
+        margin: 30px 0;
+    }
+}

@@ -1,0 +1,272 @@
+﻿@model tccGoodEyes.Models.PedidoSuperModel
+@{
+    ViewBag.Title = "Detalhe da Venda";
+
+    if (ViewBag.Gerente == 3) // or other custom logic
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+
+<section class="titulo">
+    <h2>Detalhes da Venda</h2>
+</section>
+
+<section class="formVenda">
+    <h3>Altere o status deste pedido</h3>
+    <form action="DetalheVendas" method="post">
+        <select name="statusPedido">
+            <option value="1">Pagamento Pendente</option>
+            <option value="2">Pagamento Confirmado</option>
+            <option value="3">Produto em Transporte</option>
+            <option value="4">Enviado</option>
+            <option value="5">Pedido Cancelado</option>
+        </select>
+    </form>
+</section>
+
+<section class="contColunas">
+
+    <section class="col1">
+        <h3>Dados do Pagamento</h3>
+
+        <table class="table">
+            <tr>
+
+                <th>
+                    Código do Pedido
+                </th>
+
+                <td>
+                    @Model.pagamentoModel.cd_pedido
+
+                </td>
+            </tr>
+
+            <tr>
+
+                <th>
+                    Status do Pedido
+                </th>
+
+                @foreach (var p in Model.pedidoModelLista)
+                {
+                    <td id="status">
+                        @p.status_pedido
+                    </td>
+                }
+            </tr>
+
+
+            <tr>
+                <th>
+                    Tipo de Pagamento
+                </th>
+
+                <td>
+                    @if (Model.pagamentoModel.tipo_pagamento.Contains(' '))
+                    {
+                        <p>Cartão</p>
+                    }
+                    else
+                    { <p>Boleto</p>}
+
+                </td>
+            </tr>
+
+            <tr>
+
+                <th>
+                    Tipo de Parcelamento
+                </th>
+
+                <td>
+                    @Model.pagamentoModel.parcelamento
+                </td>
+            </tr>
+
+            <tr>
+
+                <th>
+                    Endereço de Entrega
+                </th>
+
+                <td>
+                    <ul>
+                        <li>@Model.clienteModel.nm_rua, @Model.clienteModel.nm_rua,</li>
+                        <li>@Model.clienteModel.complemento, @Model.clienteModel.bairro</li>
+                        <li>
+                            @Model.clienteModel.cidade,  @Model.clienteModel.estado- @Model.clienteModel.sg_uf
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+    @foreach (var rece in Model.receitaModelLista)
+    {
+        if (rece != null)
+        {
+            <section class="col1">
+                <h3>Dados da Receita</h3>
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            Lente para armação:
+                        </th>
+                        <td>
+                            Armação no° @rece.cd_produto
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Código da Receita
+                        </th>
+                        <td>
+                            @rece.cd_receita
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Data da Receita
+                        </th>
+                        <td>
+                            @rece.dt_receita
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Data da Validade
+                        </th>
+                        <td>
+                            @rece.dt_validade
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Nome do Oftalmo
+                        </th>
+                        <td>
+                            @rece.nm_oftalmo @rece.sobrenome_oftalmo
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Olho Direito
+                        </th>
+                        <td>
+                            @rece.olho_direito
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Olho esquerdo
+                        </th>
+                        <td>
+                            @rece.olho_esquerdo
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Distância Pupilar
+                        </th>
+                        <td>
+                            @rece.distancia_pupilar
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Observação
+                        </th>
+                        <td>
+                            @rece.observacao
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        }
+    }
+
+    <section class="col2">
+        <h3>Itens do Pedido </h3>
+
+        <table class="itenstable pedidotab">
+
+            <tr>
+                <th>Item</th>
+                <th>Preço Uni.</th>
+                <th>QTDE.</th>
+                <th>Total</th>
+            </tr>
+
+            @foreach (var pro in Model.produtoModelLista)
+            {
+
+                <tr>
+                    <td id="iten">
+                        <img src="@pro.caminho_imagem">
+                        <p>@pro.nm_marca</p>
+                    </td>
+                    <td>@pro.vl_preco_unitario</td>
+                    <td>@pro.qt_item</td>
+                    <td>@pro.vl_subtotal</td>
+                </tr>
+
+            }
+        </table>
+    </section>
+
+
+</section>
+
+<section class="botoes">
+    <a class="btnSecundario" href="/Sistema/ConsVendas">Voltar para consulta</a>
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+
+            $(".formVenda select option").each(function () {
+  
+                if ($("#status").text().trim() == $(this).text().trim()) {
+                    $(this).attr('selected', 'selected');
+                    console.log("a");
+                }
+            });
+
+            $(".formVenda select option").click(function () {
+                var r = confirm("Tem certeza que deseja alterar o status deste pedido?");
+                if (r == false) {
+                    $(this).each(function () {
+                        if ($("#status").text().trim() == $(this).text().trim()) {
+                            $(this).attr('selected', 'selected');
+                            console.log("a");
+                        }
+                    });
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                else {
+                    $("form").submit();
+                }
+            });
+        
+
+        });
+    </script>
+}

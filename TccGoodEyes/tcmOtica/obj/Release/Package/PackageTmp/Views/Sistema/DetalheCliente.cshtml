@@ -1,0 +1,194 @@
+﻿@model tccGoodEyes.Models.ClienteModel
+
+@{
+    ViewBag.Title = "Detalhe do Cliente";
+
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+
+    <section class="titulo">
+        <h2>Detalhes do Cliente</h2>
+    </section>
+
+    <section class="contColunas">
+
+        <section class="col1">
+            <h3>Dados Pessoais</h3>
+
+            <table class="table">
+                <tr>
+
+                    <th>
+                        Cód.
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.cd_cliente)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Nome
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.nome)
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <th>
+                        Sobrenome
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.sobrenome)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Data de Nascimento
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.dt_nascimento)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        CPF
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.no_cpf)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        E-mail
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.email)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Telefone
+
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.no_tel)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        CELULAR
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.no_cel)
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+
+        <section class="col2">
+            <h3>Endereço </h3>
+
+            <table class="table">
+                <tr>
+                    <th>
+                        CEP
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.no_cep)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>
+                        Rua
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.nm_rua)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Número
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.no_rua)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Complemento
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.complemento)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Bairro
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.bairro)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Cidade
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.cidade)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Estado
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.estado)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        UF
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.sg_uf)
+                    </td>
+                </tr>
+
+
+            </table>
+        </section>
+
+
+    </section>
+
+    <section class="botoes">
+        <a class="btnSecundario" href="/Sistema/ConsCliente?aviso=0">Voltar para consulta</a>
+        <a class="btnNormal" href="/Sistema/AlteraCliente?cod=@Model.cd_cliente">Editar</a>
+
+    </section>

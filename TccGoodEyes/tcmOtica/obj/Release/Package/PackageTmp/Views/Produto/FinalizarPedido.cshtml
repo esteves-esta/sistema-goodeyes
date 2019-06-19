@@ -1,0 +1,346 @@
+﻿@model IEnumerable<tccGoodEyes.Models.ProdutoModel>
+
+@{
+    ViewBag.Title = "FinalizarPedido";
+    double t = 0;
+
+    foreach (var item in Model)
+    {
+        t = t + Convert.ToDouble(item.vl_preco_unitario) * Convert.ToDouble(item.qt_item);
+        ViewBag.total = t;
+    }
+}
+
+<section class="titulo carrinho">
+    <h2>Finalizar Compra</h2>
+</section>
+
+<section>
+    <form action="FinalizarPedido" method="post" class="contFina">
+        <div class="col1">
+            <div class="end">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Endereço de Entrega
+                </h3>
+
+                <div class="mostraend">
+                    <p>@ViewBag.EndCli, @ViewBag.NumCli - @ViewBag.BairroCli, @ViewBag.Estado -@ViewBag.EstadoUF, @ViewBag.CepCli - @ViewBag.CompleCli</p>
+
+                </div>
+
+                <div class="altC"><a class="btnSecundario alt">Alterar</a></div>
+
+                <div class="alterarend">
+                    <label>Endereço<em>*</em></label>
+                    <input type="text" name="txtEnd" id="txtEnd" value="@ViewBag.EndCli">
+
+                    <div class="doisinput">
+                        <div>
+                            <label>Número<em>*</em></label>
+                            <input type="number" name="txtNum" id="txtNum" value="@ViewBag.NumCli">
+                        </div>
+
+                        <div>
+                            <label>CEP<em>*</em></label>
+                            <input type="text" name="txtCEP" id="txtCEP" value="@ViewBag.CepCli">
+                        </div>
+                    </div>
+
+                    <label>Complemento</label>
+                    <input type="text" name="txtComp" id="txtComp" value="@ViewBag.CompleCli">
+
+                    <label>Bairro<em>*</em></label>
+                    <input type="text" name="txtBairro" id="txtBairro" value="@ViewBag.BairroCli">
+
+                    <label>Cidade<em>*</em></label>
+                    <input type="text" name="txtCidade" id="txtCidade" value="@ViewBag.CidadeCli">
+
+                    <div class="doisinput">
+
+                        <div>
+                            <label>Estado<em>*</em></label>
+                            <input type="text" name="txtEstado" id="txtEstado" value="@ViewBag.Estado">
+                        </div>
+
+                        <div>
+                            <label>UF<em>*</em></label>
+                            <input type="hidden" name="uf" id="uf" value="@ViewBag.EstadoUF" />
+                            <select id="txtUF" name="txtUF">
+                                <option selected disabled>Escolha a uf</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="CE">CE</option>
+                                <option value="BA">BA</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    @* <input type="submit" name="btnCadastrar" id="btnCadastrar" value="Cadastrar">*@
+                </div>
+            </div>
+        </div>
+
+        <div class="pag col2">
+            <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                Dados de Pagamento
+            </h3>
+            <div class="tipoPagamento">
+                <label>
+                    <input type="hidden" name="paga" id="paga" value="@ViewBag.pagamento" />
+                    <input type="radio" name="formapaga" class="formapaga" value="cartão" required checked>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="feather feather-credit-card"
+                         style="fill:none;stroke-linejoin:round;stroke-width:2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                        <line x1="1" y1="10" x2="23" y2="10" />
+                    </svg>
+                    Cartão
+                </label>
+
+                <label>
+                    <input type="radio" name="formapaga" class="formapaga" value="boleto" required>
+
+                    <svg class="feather boleto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 297"><rect width="33" y="49.5" height="198" /><rect width="33" x="83" y="49.5" height="198" /><rect width="33" x="133" y="49.5" height="198" /><rect width="49" x="248" y="49.5" height="198" /><rect width="16" x="50" y="49.5" height="198" /><rect width="16" x="182" y="49.5" height="198" /><rect width="16" x="215" y="49.5" height="198" /></svg>
+                    Boleto
+                </label>
+            </div>
+
+            <div class="infoPa">
+                <label>Número do Cartão</label>
+                <input type="text" name="numcartao" id="numcartao" value="@ViewBag.numcartao" required>
+
+                <label>Nome Impresso no Cartão</label>
+                <input type="text" name="nomecartao" id="nomecartao" value="@ViewBag.nomecartao" required>
+
+                <label>Bandeira do Cartão</label>
+                <input type="hidden" name="bandeira" id="bandeira" value="@ViewBag.bandeira" />
+                <select id="txtBand" name="txtBand" required>
+                    <option selected disabled>Seleciona a bandeira</option>
+                    <option>VISA</option>
+                    <option>MASTERCARD</option>
+                    <option>ELO</option>
+                    <option>AMERICAN EXPRESS</option>
+                    <option>DINER'S CLUB</option>
+                </select>
+
+           
+                    <div>
+                        <label>Cód. de Segurança</label>
+                        <input type="number" name="codseg" id="codseg" required maxlength="3" value="@ViewBag.CodSeg">
+                    </div>
+
+                    <div>
+                        <label>Parcelas</label>
+                        <input type="hidden" name="parc" id="parc" value="@ViewBag.parcela" />
+                        <select id="parcelamento" name="parcelamento" required>
+                            @for(int i = 1; i <= 10; i++)
+                            {
+                                double par = t / i;
+                                ViewBag.parc = Math.Round(par, 2);
+
+                            <option value="@i">@i x de R$ @ViewBag.parc</option>
+                            }
+                        </select>
+
+                    </div>
+                
+
+                <label>Validade do Cartão</label>
+                <div class="doisinput">
+                    <div>
+                        <input type="hidden" name="mesvali" id="mesvali" value="@ViewBag.mes" />
+                        <select id="mes" name="mes" required>
+                            <option selected disabled>MÊS</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="anovali" id="anovali" value="@ViewBag.ano" />
+                    <select id="ano" name="ano" required>
+                        <option selected disabled>ANO</option>
+                        <option> @DateTime.Now.Year</option>
+                        @for (int i = 1; i < 8; i++)
+                        {
+                            ViewBag.ano = @DateTime.Now.Year + i;
+                            <option>@ViewBag.ano</option>
+                        }
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="infoBoleto">
+                <p>
+                    O Boleto bancário será exibido após a confirmação da compra e
+                    poderá ser impresso para pagamento em qualquer agência bancária,
+                    ou ter o número anotado para pagamento pelo telefone ou internet.
+                </p>
+            </div>
+
+
+        </div>
+
+
+        <div>
+            <div class="col3 resumo">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path><polyline points="2.32 6.16 12 11 21.68 6.16"></polyline><line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                    Resumo do Pedido
+                </h3>
+                <div class="resuInfo">
+                    <table>
+                        @foreach (var item in Model)
+                        {
+                            ViewBag.subtotal = Convert.ToDouble(item.vl_preco_unitario) * Convert.ToDouble(item.qt_item);
+                            <tr>
+                                <td><img class="prodIMG" src="@item.caminho_imagem"></td>
+                                <td>
+                                    <ul>
+                                        <li>@item.nm_marca</li>
+                                        <li><span>QTDE.</span>@item.qt_item</li>
+                                        <li><span>PREÇO UN.</span>@item.vl_preco_unitario</li>
+                                        <li><span>TOTAL</span>@ViewBag.subtotal</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+
+                    <table class="preco">
+
+                        @foreach (var item in Model)
+                        {
+                            ViewBag.subtotal = Convert.ToDouble(item.vl_preco_unitario) * Convert.ToDouble(item.qt_item);
+                            <tr>
+                                <td>@item.nm_marca</td>
+                                <td>@ViewBag.subtotal</td>
+                            </tr>
+                        }
+                        <tr id="totalpreco">
+                            <td>TOTAL</td>
+                            <td>@ViewBag.total</td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="valor" value="@ViewBag.total" />
+                </div>
+            </div>
+            <input type="submit" name="btnFinaliza" id="btnFinaliza" value="Finalizar Pedido">
+        </div>
+    </form>
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var paga;
+            $('.formapaga').change(function () {
+
+                if ($(this).val() == "boleto") {
+                    $('.infoBoleto').show();
+                    $('.infoPa').hide();
+                    paga = "boleto";
+                    $('.infoPa input').attr('required', false);
+                    $('.infoPa select').attr('required', false);
+                }
+                else if ($(this).val() == "cartão") {
+                    $('.infoBoleto').hide();
+                    $('.infoPa').show();
+                    paga = "cartão";
+                    $('.infoPa input').attr('required', true);
+                    $('.infoPa select').attr('required', true);
+                }
+
+            });
+
+            $('.alt').click(function () {
+
+                if ($('.alterarend').is(':visible') == true) {
+                    $('.mostraend').show();
+                    $('.alterarend').hide();
+                    $('.alterarend input').attr('required', false);
+                    $('.alterarend select').attr('required', false);
+
+                } else {
+                    $('.alterarend').show();
+                    $('.mostraend').hide();
+
+                    $('.alterarend input').attr('required', true);
+                    $('.alterarend select').attr('required', true);
+                    $('#txtComp').attr('required', false);
+                }
+            });
+
+            atualizaSelect("#uf", "txtUF");
+            atualizaSelect("#parc", "parcelamento");
+            atualizaSelect("#mesvali", "mes");
+            atualizaSelect("#anovali", "ano");
+
+            atualizaInput("#paga", "formapaga");
+            pegaValor("#paga", "formapaga");
+
+
+            $(this).submit(function (e) {
+                if (paga == "cartão") {
+                    console.log($('.formapaga').val());
+                    if (ChecarInput($('#codseg'), 3) === true) {
+                        $('#codseg').focus();
+                        $('#codseg').css("background-color", "#D3EDF0");
+                        alert("Digite um número válido");
+                        e.preventDefault();
+                        return false;
+                    } if (ChecarInput($('#numcartao'), 19) === true) {
+                        $('#numcartao').focus();
+                        $('#numcartao').css("background-color", "#D3EDF0");
+                        alert("Digite um número válido");
+                        e.preventDefault();
+                        return false;
+                    }
+                    if (ChecarInput($('#txtCEP'), 9) === true) {
+                        $('#txtCEP').focus();
+                        $('#txtCEP').css("background-color", "#D3EDF0");
+                        alert("Digite um número válido");
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+            });
+
+
+        });
+    </script>
+}

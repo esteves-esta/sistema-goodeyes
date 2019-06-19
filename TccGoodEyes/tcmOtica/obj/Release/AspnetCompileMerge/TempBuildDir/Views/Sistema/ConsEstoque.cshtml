@@ -1,0 +1,227 @@
+﻿@model IEnumerable<tccGoodEyes.Models.ProdutoModel>
+
+@{
+    ViewBag.Title = "Consulta do Estoque";
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+<section class="titulo">
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+
+        <div>
+            <h2>Consulta</h2>
+            <h1>Estoque</h1>
+        </div>
+    </div>
+</section>
+
+
+<section class="consulta containerEst">
+
+    <section>
+        <h4>
+            <span>@ViewBag.QtdePro</span>
+            Produtos
+        </h4>
+
+        <h4>
+            <span>@ViewBag.QtdeMarcas</span>
+            Marcas
+        </h4>
+    </section>
+
+
+    <section class="pesquisa">
+        <h3>Pesquise por:</h3>
+
+        <form action="ConsEstoque" method="post" class="horizontal pesquisa">
+
+            <div>
+                <label>Tipo do Produto</label>
+                <select id="txtTipoProd" name="txtTipoProd">
+                    <option selected disabled>Escolha um tipo do produto</option>
+                    <option value="Óculos de Grau">Óculos de Grau</option>
+                    <option value="Óculos de Sol">Óculos de Sol</option>
+                    <option value="Lente">Lente</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Marcas de Óculos</label>
+                <select id="txtMarca" name="txtMarca">
+                    <option selected disabled>Escolha a Marca</option>
+                    @foreach (string i in ViewBag.ListaDeMarcas)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label>Marcas de Lente</label>
+                <select id="txtMarca" name="txtMarcaLente">
+                    <option selected disabled>Escolha a Marca</option>
+                    @foreach (string i in ViewBag.ListaDeMarcasLentes)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label>Preço</label>
+                <select id="txtPreco" name="txtPreco">
+                    <option selected disabled>Escolha o preco</option>
+                    <option value="0-100">até R$100</option>
+                    <option value="100-200">de R$100 a R$200</option>
+                    <option value="200-300">de R$200 a R$300</option>
+                    <option value="300-400">de R$300 a R$400</option>
+                    <option value="400-500">de R$400 a R$500</option>
+                    <option value="600-10000">a partir de R$600</option>
+                </select>
+            </div>
+
+            <div class="cadOculos">
+                <label>Material do Óculos</label>
+                <select id="txtMaterialOculos" name="txtMaterialOculos" required>
+                    <option selected disabled>Escolha o material</option>
+                    <option value="Ácrilico">Ácrilico</option>
+                    <option value="Madeira">Madeira</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Acetato">Acetato</option>
+                </select>
+            </div>
+
+            <div class="cadLente">
+                <label>Material da Lente</label>
+                <select id="txtMaterialLente" name="txtMaterialLente" required>
+                    <option selected disabled>Escolha o material</option>
+                    <option value="Ácrilico">Ácrilico</option>
+                    <option value="Crizal">Crizal</option>
+                    <option value="Policarbonato">Policarbonato</option>
+                </select>
+            </div>
+
+            @*<input type="submit" name="btnPesquisa" id="btnPesquisa" value="Pesquisar" />*@
+
+        </form>
+    </section>
+
+    <div class="tabconsulta">
+
+        <table class="table">
+            <tr>
+                <th>
+                    Cód.
+                </th>
+                <th>
+                    Imagem
+                </th>
+                <th>
+                    Marca
+                </th>
+                <th>
+                    Tipo do produto
+                </th>
+                <th>
+                    Descrição do produto
+                </th>
+                <th>
+                    Aspecto do produto
+                </th>
+                <th>
+                    Preço unitário
+                <th>
+                    Garantia
+                </th>
+
+                <th>
+                    Ações
+                </th>
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cd_produto)
+                </td>
+
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.caminho_imagem)" alt="@Html.DisplayFor(modelItem => item.nm_marca)" /> 
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.nm_marca)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.descricao)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.aspecto)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.vl_preco_unitario)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.garantia)
+                </td>
+
+                <td>
+                    <a class="btnTerciario" href="/Sistema/CadProduto?cod=@item.cd_produto&aviso=0">Editar</a>
+                    <a class="btnTerciario" href="/Sistema/DetalheEstoque?cod=@item.cd_produto">Detalhes</a>
+                    <a class="btnTerciario excluir" href="/Sistema/ExcluirPro?cod=@item.cd_produto">Deletar</a>
+            </tr>
+            }
+
+        </table>
+
+    </div>
+</section>
+
+@*@section scripts{
+    <script>
+
+
+        $(document).ready(function () {
+
+            //Esconder secoes do tipo de produto opostos
+            $(".cadLente").hide();
+            $(".cadOculos").hide();
+
+
+            $("#txtTipoProd").change(function () {
+                var tipo = $("#txtTipoProd").val();
+                if (tipo == 'Lente') {
+                    $(".cadOculos").hide();
+                    $(".cadLente").show();
+                }
+                else if (tipo == 'Armação' || tipo == 'Óculos de Sol') {
+                    $(".cadOculos").show();
+                    $(".cadLente").hide();
+                }
+            });
+
+        });
+
+
+    </script>
+}*@
+

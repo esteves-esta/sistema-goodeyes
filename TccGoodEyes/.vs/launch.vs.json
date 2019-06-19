@@ -1,0 +1,30 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "tcmOtica\\tccGoodEyes.csproj",
+      "name": "tccGoodEyes.csproj"
+    },
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "tcmOtica\\tccGoodEyes.csproj",
+      "name": "tccGoodEyes.csproj(1)"
+    },
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "tcmOtica\\tccGoodEyes.csproj",
+      "name": "tccGoodEyes.csproj(2)"
+    },
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "tcmOtica\\Global.asax.cs",
+      "name": "Global.asax.cs"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\ApplicationInsights.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\tccGoodEyes.dll.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\tccGoodEyes.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\tccGoodEyes.pdb
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\csc.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\csc.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\csc.rsp
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\csi.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\csi.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\csi.rsp
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.AppContext.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Console.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.IO.Compression.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Security.Claims.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.ValueTuple.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\vbc.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\vbc.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\vbc.rsp
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\VBCSCompiler.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Antlr3.Runtime.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\itextsharp.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.Web.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\MySql.Data.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Newtonsoft.Json.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Helpers.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Mvc.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Optimization.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Razor.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.WebPages.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.WebPages.Razor.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\WebGrease.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Google.Protobuf.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\itextsharp.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\MySql.Data.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Helpers.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Mvc.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Optimization.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.Razor.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.WebPages.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Web.WebPages.Razor.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Newtonsoft.Json.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Antlr3.Runtime.pdb
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.AI.Web.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\pt-br\System.Web.Optimization.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\pt-br\System.Web.Razor.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\pt-br\System.Web.WebPages.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\obj\Release\tccGoodEyes.csproj.CoreCompileInputs.cache
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\obj\Release\tccGoodEyes.csproj.CopyComplete
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\obj\Release\tccGoodEyes.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TCC Otica GoodEyes\tcmOtica\obj\Release\tccGoodEyes.pdb
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\ApplicationInsights.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\tccGoodEyes.dll.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\tccGoodEyes.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\tccGoodEyes.pdb
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\csc.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\csc.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\csc.rsp
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\csi.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\csi.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\csi.rsp
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.AppContext.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Console.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.IO.Compression.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Security.Claims.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.ValueTuple.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\vbc.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\vbc.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\vbc.rsp
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\VBCSCompiler.exe
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Antlr3.Runtime.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\itextsharp.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.Web.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\MySql.Data.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Newtonsoft.Json.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Helpers.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Mvc.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Optimization.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Razor.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.WebPages.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.WebPages.Razor.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\WebGrease.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Google.Protobuf.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\itextsharp.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\MySql.Data.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Helpers.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Mvc.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Optimization.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.Razor.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.WebPages.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Web.WebPages.Razor.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Newtonsoft.Json.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Antlr3.Runtime.pdb
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.AI.Web.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\pt-br\System.Web.Optimization.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\pt-br\System.Web.Razor.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\pt-br\System.Web.WebPages.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\obj\Release\tccGoodEyes.csproj.CoreCompileInputs.cache
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\obj\Release\tccGoodEyes.csproj.CopyComplete
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\obj\Release\tccGoodEyes.dll
+C:\Users\Fernanda Esteves\Downloads\goodeyes 3SEM\TccGoodEyes\tcmOtica\obj\Release\tccGoodEyes.pdb

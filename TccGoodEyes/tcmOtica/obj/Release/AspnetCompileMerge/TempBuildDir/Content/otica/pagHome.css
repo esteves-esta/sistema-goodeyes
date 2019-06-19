@@ -1,0 +1,183 @@
+﻿/*
+    HOME
+*/
+
+#bannerRotativo {
+    position: relative;
+    width: 100%;
+    right: 0px;
+    overflow: hidden;
+    height: 34vw;
+}
+
+.left, .right {
+    font-size: 4em;
+    color: var(--azul-primario);
+    font-weight: 800;
+    padding: 0 3%;
+    cursor: pointer;
+}
+
+.left {
+    position: absolute;
+    top: 40%;
+}
+
+.right {
+    position: absolute;
+    right: 0px;
+    top: 40%;
+}
+
+#bannerRotativo img {
+    width: 100%;
+}
+
+#propaganda {
+    width: 100%;
+    overflow: hidden;
+    height: 18vw;
+}
+
+#propaganda img {
+    width: 100%;
+}
+
+#infoHome {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--azul-claro);
+    padding: 4% 0;
+}
+
+/*ICONES*/
+#infoHome .feather {
+    stroke: var(--azul-secundario);
+    width: 10%;
+    /*height:2%;*/
+}
+
+.infoItens {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 300px;
+}
+
+.infoItens p {
+    font-weight: 800;
+    margin-top: 2%;
+    font-size: 1.1em;
+    color: var(--azul-secundario);
+    letter-spacing: 3px
+}
+
+/*
+    produtos promocao
+*/
+.produtopromocao {
+    margin: 5% 0;
+}
+
+.produtopromocao h2 {
+    margin-bottom: 6%
+}
+
+
+
+
+/*
+    botoes imagem fem e masc
+*/
+
+#generobtn {
+    margin-top:5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   /*width:100%;*/
+}
+
+#generobtn div {
+    flex-basis: 540px;
+    overflow: hidden;
+    transition: all ease .3s;
+}
+
+#generobtn img {
+    width: 100%;
+    transition: all ease .3s;
+}
+
+#generobtn img {
+
+}
+
+#generobtn div:hover img {
+    transform: scale(1.1);
+    filter: contrast(100%);
+}
+
+.loja {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 8%;
+}
+
+    .loja h2, .produtopromocao h2 {
+        letter-spacing:1px;
+        color: var(--azul-secundario);
+        margin-bottom: 8%;
+    }
+
+.loja div {
+    width: 400px;
+    text-align: justify;
+}
+
+#bannerResponsivo{
+    display:none;
+    width:100%;
+}
+
+#bannerResponsivo img {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .left, .right {
+        font-size: 1em;
+    }
+
+    .infoItens p {
+        font-size: 1.2em
+    }
+
+    .infoItens {
+        margin: 25px;
+    }
+
+    .footerColuna, .creditos {
+        margin: 25px;
+    }
+
+    #bannerRotativo {
+        display: none;
+    }
+
+    #bannerResponsivo {
+        display: block;
+    }
+
+}
+

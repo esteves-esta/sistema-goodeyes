@@ -1,0 +1,111 @@
+﻿@model IEnumerable<tccGoodEyes.Models.ProdutoModel>
+
+@{
+    ViewBag.Title = "Carrinho";
+}
+
+<section class="titulo carrinho">
+    <h2>Carrinho de Compra</h2>
+</section>
+
+
+<section class="contCarrinho">
+
+    @if (ViewBag.carrinhoVazio == true)
+    {
+        <h3>
+            @ViewBag.erro
+        </h3>
+        <p class="estiloAviso">Continue suas compras <a class="btnTerciario" href="@ViewBag.link">clicando aqui</a>.</p>
+    }
+    else
+    {
+        
+        <form action="Carrinho" method="post">
+            <table class="itenstable">
+
+                <tr>
+
+                    <th>Item</th>
+                    <th>Preço Uni.</th>
+                    <th>QTDE.</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    ViewBag.subtotal = Convert.ToDouble(item.vl_preco_unitario) * Convert.ToDouble(item.qt_item);
+                    ViewBag.name = item.cd_carrinho + "-" + item.cd_produto;
+                    <tr>
+                        <td id="iten">
+                            <img src="@item.caminho_imagem">
+                            <p>@item.nm_marca</p>
+
+                            <div id="respoQ">
+                                <label>QTDE.</label>
+                                <input type="number" name="txtQuant" id="txtQuant" required min="1" value="@item.qt_item">
+                            </div>
+                        </td>
+                        <td>@item.vl_preco_unitario</td>
+                        <td>
+
+                            <input type="number" name="@item.cd_carrinho-@item.cd_produto" id="txtQuant" required min="1" value="@item.qt_item">
+                        </td>
+                        <td>@ViewBag.subtotal</td>
+                        <td>
+                            <a class="btnTerciario excluir" href="~/Produto/DeletarItenPedido?cod=@item.cd_carrinho">EXCLUIR</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </form>
+
+        <section class="preco">
+            <table class="tblpreco">
+                @{
+                    double t = 0;
+                }
+                @foreach (var item in Model)
+                {
+                    ViewBag.subtotal = Convert.ToDouble(item.vl_preco_unitario) * Convert.ToDouble(item.qt_item);
+                    t = t + Convert.ToDouble(item.vl_preco_unitario) * Convert.ToDouble(item.qt_item);
+                    ViewBag.total = t;
+                    <tr>
+                        <td>@item.nm_marca</td>
+                        <td>@ViewBag.subtotal</td>
+                    </tr>
+                }
+
+                <tr class="totalpreco">
+                    <td>TOTAL</td>
+                    <td id="totalCar">@ViewBag.total</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <div class="horizontal">
+            <a class="btnSecundario" href="/Produto/ConsultaProdutos?tipo=grau&genero=fem">ESCOLHER MAIS PRODUTOS</a>
+            <a class="btnNormal" href="/Produto/FinalizarPedido">FECHAR PEDIDO</a>
+        </div>
+    }
+
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $("form input").change(function () {
+                $(this).blur(function () {
+                    if ($(this).val() != 0) {
+                        $("form").submit();
+                        }
+                });
+            });  
+
+        }); 
+
+    </script>
+}

@@ -1,0 +1,140 @@
+﻿@model tccGoodEyes.Models.ProdutoModel
+@{
+    ViewBag.Title = @Model.nm_marca;
+}
+
+<section class="caminho">
+    <p>
+        <a href="~/Home/Index">Ótica GOOD EYES</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <a href="" id="volta">Página Anteiror</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+
+        @Model.nm_marca @Model.cd_produto
+    </p>
+</section>
+
+<section >
+    <h3 id="erroNoti">@ViewBag.erro</h3>
+</section>
+
+<section class="conteudo">
+    <div class="col1">
+        <img src="@Model.caminho_imagem" alt="@Model.nm_marca">
+    </div>
+
+    <div class="col2">
+        <h5>Rayban</h5>
+
+        <h2>@ViewBag.modelo @ViewBag.corArma COD.@Model.cd_produto</h2>
+
+        <p class="precoInfo"><span>R$</span>@Model.vl_preco_unitario</p>
+        <p class="cred">á vista no cartão de crédito</p>
+
+        <form action="~/Produto/ProdutoSelecionado?cod=@Model.cd_produto&erro=false" method="post">
+            <label>Quantidade</label>
+            <input type="number" name="txtQntd" id="txtQntd" value="1" min="1" required>
+            @if (ViewBag.esgotado == false)
+            {
+                <input type="submit" name="txtComprar" id="txtComprar" value="Adicionar ao Carrinho">
+                <label>30 dias de garantia de satisfação</label>
+            }
+        </form>
+        @if (ViewBag.esgotado == true)
+        {
+            <a class="btnSecundario esgotado" href="/Produto/Favorito?cod=@Model.cd_produto">
+                <span id="favorito">Produto indisponível.</span>
+                Avise-me quando chegar
+            </a>
+        }
+        </div>
+
+</section>
+
+<section class="descri">
+    <div class="cont-descri">
+        <div class="col1">
+            <h3>Especificações</h3>
+
+            <table>
+                <tr>
+                    <td>Gênero</td>
+                    <td>@ViewBag.gen</td>
+                </tr>
+                <tr>
+                    <td>Modelo</td>
+                    <td>@ViewBag.modelo</td>
+                </tr>
+                <tr>
+                    <td>Material</td>
+                    <td>@ViewBag.mate</td>
+                </tr>
+                <tr>
+                    <td>Cor da Armação</td>
+                    <td>@ViewBag.corArma</td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>Tratamento da lente</td>
+                    <td>@ViewBag.tratamentoLente</td>
+                </tr>
+                <tr>
+                    <td>Cor da Lente</td>
+                    <td>@ViewBag.corLente</td>
+                </tr>
+                <tr>
+                    <td>Faixa Etária</td>
+                    <td>@ViewBag.faixaEtaria</td>
+                </tr>
+                <tr>
+                    <td>Marca </td>
+                    <td>@Model.nm_marca</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col2">
+            <h3>Medidas</h3>
+
+            <table>
+                <tr>
+                    <td>Tamanho da Ponte</td>
+                    <td>@ViewBag.tamPonte</td>
+                </tr>
+                <tr>
+                    <td>Comprimento da Haste</td>
+                    <td>@ViewBag.larguraLente</td>
+                </tr>
+                <tr>
+                    <td>Altura da Lente</td>
+                    <td>@ViewBag.altLente</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            var pagAnterior = document.referrer;
+            var pagTit = pagAnterior.substring(pagAnterior.indexOf("?"), pagAnterior.length);
+
+            if (pagTit.endsWith("sol") || pagTit.endsWith("fem") || pagTit.endsWith("mas")) {
+                $("#volta").text("Óculos de Sol");
+            }
+            else {
+                $("#volta").text("Óculos de Grau");
+            }
+
+            $("footer").css("margin", "0");
+            //$("footer").css("background-color", "#fff");
+
+        });
+
+    </script>
+
+}

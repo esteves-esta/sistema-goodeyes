@@ -1,0 +1,97 @@
+﻿.pesquisa {
+    margin:50px 0;
+}
+
+.pesquisa h3{
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--cinza);
+    font-size:1em;
+}
+
+.consulta h4 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cinza-escuro);
+    font-size:1.2em;
+}
+
+.consulta span {
+    color: var(--azul-terciario);
+}
+
+.pesquisa > div{
+    margin-right:50px;
+}
+
+.pesquisa .horizontal{
+    justify-content:unset;
+}
+
+.table img {
+    width: 110px;
+}
+
+.table td {
+    padding: 10px 20px;
+    border-bottom: solid 1px #dedede;
+    font-size: .9em;
+    font-weight: 500;
+    color:var(--cinza-escuro);
+    width:350px;
+}
+
+
+
+.consulta tr:hover {
+    background-color: var(--azul-claro)
+}
+
+.consulta tr:hover th{
+    background-color: none
+}
+
+.table th {
+    padding: 10px 20px;
+    color: var(--cinza-claro2);
+    border-bottom: solid 1px #dedede;
+    text-transform: uppercase;
+    font-size: .7em;
+    text-align: left;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.table td:first-child, .table th:first-child {
+    padding: 0px;
+}
+
+.contColunas .table th{
+    width:50%;
+}
+
+.contColunas, .botoes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contColunas h3{
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--azul-primario);
+    margin-bottom:25px;
+}
+
+.botoes {
+    margin-top: 45px;
+}
+
+.detEstoque .col1{
+    order:1;
+}
+
+.detEstoque img {
+    width: 400px;
+}

@@ -1,0 +1,152 @@
+﻿@model IEnumerable<tccGoodEyes.Models.VendasModel>
+@{
+    ViewBag.Title = "Consulta das Vendas";
+    if (ViewBag.Gerente == 3) // or other custom logic
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+
+
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+<section class="titulo">
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+
+        <div>
+            <h2>Consulta</h2>
+            <h1>Vendas</h1>
+        </div>
+    </div>
+</section>
+
+
+<section class="consulta containerVendas">
+
+
+        <section>
+            <h4>
+                <span>@ViewBag.QtdeVendas</span>
+                Vendas
+            </h4>
+        </section>
+
+    <section class="pesquisa">
+        <h3>Pesquise por:</h3>
+
+        <form action="ConsVendas" method="post" class="horizontal pesquisa">
+
+
+                @*<label>Data do Pedido</label>*@
+            <div>
+                <div class="doisinput">
+                    <div>
+                        <label>MÊS DO PEDIDO</label>
+                        <input type="text" name="mes" id="txtData" placeholder="05" />
+                    </div>
+                    <div>
+                        <label>ANO DO PEDIDO</label>
+                        <input type="text" name="ano" id="txtData" placeholder="2018" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <label>Nome do Cliente</label>
+                <input list="NomeCli" name="NomeCli">
+                <datalist id="NomeCli">
+                    @foreach (string i in ViewBag.ListCliente)
+                    {
+                        <option value="@i" />
+                    }
+                </datalist>
+            </div>
+
+            <div>
+                <label>Tipo de Parcelamento</label>
+                <select name="parc">
+                    <option selected disabled>Escolha uma opção</option>
+                    <option value="Á vista">Á vista</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+
+            @*<input type="submit" name="btnPesquisa" id="btnPesquisa" value="Pesquisar" />*@
+        </form>
+    </section>
+
+
+        <div class="tabconsulta">
+
+            <table class="table">
+                <tr>
+                    <th>
+                        Cód. do Pedido
+                    </th>
+                    <th>
+                        Cód. do Cliente
+                    </th>
+                    <th>
+                        Cliente
+                    </th>
+                    <th>
+                        Data do Pedido
+                    </th>
+                    <th>
+                        Tipo de Parcelamento
+                    </th>
+                    <th>
+                        Total
+                    </th>
+                    <th>
+                        Ações
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_pedido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nm_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dt_pedido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.parcelamento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.vl_total)
+                    </td>
+
+                    <td>
+                        <a class="btnTerciario" href="/Sistema/DetalheVendas?cod=@item.cd_pedido&cli=@item.cd_cliente">Detalhes</a>
+                        @*<a class="btnTerciario" href="/Sistema/ExcluirFor?cod=@item.codPedido">Deletar</a>*@
+                    </td>
+                </tr>
+                }
+
+            </table>
+
+        </div>
+
+</section>

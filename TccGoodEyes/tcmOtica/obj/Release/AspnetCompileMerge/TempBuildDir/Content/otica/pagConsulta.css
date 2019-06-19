@@ -1,0 +1,228 @@
+﻿.contTipo {
+    display: flex;
+    flex-flow: row;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between;
+}
+
+.formConPro{
+    position:sticky;
+    top:0;
+    overflow-y:scroll;
+    height:100vh;
+    width:230px;
+}
+
+/* width */
+.formConPro::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.formConPro::-webkit-scrollbar-track {
+    background-color:var(--cinza-claro);
+}
+
+/* Handle */
+.formConPro::-webkit-scrollbar-thumb {
+    background: var(--azul-primario);
+}
+
+/* Handle on hover */
+.formConPro::-webkit-scrollbar-thumb:hover {
+    background: var(--azul-secundario);
+}
+
+#produto {
+    overflow: hidden;
+    flex-basis: 25%;
+}
+
+
+#produto img{
+    width:100%;
+}
+
+.formConPro p {
+    color: var(--cinza);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: .8em;
+    letter-spacing: 1px;
+    margin-bottom: 15%;
+}
+
+
+.filtro h4 {
+    color: var(--azul-secundario);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all ease .3s;
+}
+
+.filtro h4:hover {
+    color: var(--azul-primario);
+    stroke: var(--azul-primario);
+}
+
+.opcoes{
+    margin-bottom:15%;
+    display:none;
+}
+
+.opcoes label{
+    padding:2% 0;
+}
+
+/*
+
+    PRODUTOS 
+*/
+
+.contTipo .col2 {
+    flex-basis: 75%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.iconFiltro{
+    display:none;
+    font-weight:bold;
+    letter-spacing:2px;
+    font-size:1em;
+    color:var(--azul-primario);
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.procontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+    .procontainer a {
+        text-decoration: none;
+        color: #000;
+        flex-basis: 200px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        /*padding: 2%;*/
+        padding: 10px;
+        display: block;
+        height: 200px;
+    }
+
+    .procontainer a:hover {
+        border: 1px dashed var(--azul-secundario);
+    }
+
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    line-height: 1em;
+    padding: 0px;
+    margin: 0px;
+}
+
+.produtoimg {
+    width: 90%;
+}
+
+.produtoimg img {
+    width: 100%;
+    transition: all ease .3s;
+}
+
+.produto {
+    transition: all ease .3s;
+    padding: 2%;
+}
+
+
+.tituloProduto {
+    transition: all ease .3s;
+    font-size: .9em;
+    color: var(--cinza);
+    font-weight: 500;
+    margin: 0;
+}
+
+.precoPro {
+    transition: all ease .3s;
+    font-size: 1.8em;
+    font-weight: 800;
+    line-height: 1em;
+    margin-bottom: 0;
+}
+
+
+.produto:hover .precoPro {
+    color: var(--azul-primario);
+}
+
+.produto:hover .produtoimg img {
+    filter: saturate(2) contrast(102%) opacity(80%);
+    transform: scale(1.1, 1.1)
+}
+
+.conOculos {
+    /*background-image: url('/imagens/womansol4.jpg');*/
+    /*background-size: cover;*/
+    background-position: top;
+    height: 26vh;
+}
+
+.conOculos > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+    @media screen and (max-width: 600px) {
+        .iconFiltro {
+            display: block;
+        }
+
+        .formConPro{
+            display:none;
+        }
+
+        .filtroRespon {
+            margin-top:25px;
+            position: relative;
+            overflow-y: unset;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height:auto;
+        }
+
+        .contTipo{
+            display:block;
+        }
+
+
+        .procontainer a {
+            flex-basis: 300px;
+        }
+
+        .conteudo .col2 {
+            margin: 50px 35px;
+        }
+    }

@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<section id="bannerRotativo">
+    <a href="javascript:void(0);">
+        <img class="mySlides" src="~/imagens/banner1.jpg" alt="Lançamentos e coleções exclusivas primavera verão, vem que tem" />
+    </a>
+
+    <a href="javascript:void(0);">
+        <img class="mySlides" src="~/imagens/banner2.jpg" alt="50% de descontos na compra do segundo óculos de sol">
+    </a>
+
+    <a href="javascript:void(0);">
+        <img class="mySlides" src="~/imagens/banner3.jpg" alt="Grandes Descontos em todas as armações">
+    </a>
+
+    <div class="left" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="right" onclick="plusDivs(1)">&#10095;</div>
+</section>
+
+<section id="bannerResponsivo">
+    <a href="javascript:void(0);">
+        <img src="~/imagens/banner500.jpg" alt="Alternate Text" />
+    </a>
+</section>
+
+
+<section id="infoHome">
+    <div class="infoItens">
+        <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-dollar-sign"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        <p>ATÉ 10X SEM JUROS</p>
+    </div>
+
+    <div class="infoItens">
+        <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-dollar-sign"
+             viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <p>FRETE GRÁTIS</p>
+    </div>
+
+    <div class="infoItens">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+        <p>SATISFAÇÃO GARANTIDA</p>
+    </div>
+
+    <div class="infoItens">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+        <p>TROCA GARANTIDA</p>
+    </div>
+</section>
+
+<section id="propaganda">
+    <a href="#"><img src="~/imagens/PROMO.jpg" alt="50% só nesta semana" /></a>
+</section>
+
+<section class="produtopromocao">
+    <h2>PROMOÇÕES</h2>
+
+    <div class="procontainer">
+
+        @foreach (tccGoodEyes.Models.ProdutoModel i in ViewBag.listaProd)
+        {
+            <a href="/Produto/ProdutoSelecionado?cod=@i.cd_produto&erro=0">
+                <div class="produto" name="produto">
+                    <div class="produtoimg" name="produtoimg">
+                        <img src="@i.caminho_imagem" />
+                    </div>
+                    <p class="tituloProduto">@i.nm_marca @i.cd_produto</p>
+                    <p class="precoPro">@i.vl_preco_unitario</p>
+                </div>
+            </a>
+        }
+
+    </div>
+</section>
+
+<section id="generobtn">
+
+    <div class="genmas">
+        <a href="~/Produto/ConsultaProdutos?tipo=sol&genero=mas">
+            <img src="~/imagens/mansol.jpg">
+        </a>
+    </div>
+
+    <div class="genfem">
+        <a href="~/Produto/ConsultaProdutos?tipo=sol&genero=fem">
+            <img src="~/imagens/womansol6.jpg">
+
+        </a>
+    </div>
+</section>
+
+<section class="loja">
+    <div>
+        <h2>CONHEÇA NOSSA LOJA</h2>
+        <p>Bem-vindo a Óticas GOODEYES! Muito mais do que uma ótica online, buscamos incansavelmente tendências e as melhores marcas mundiais em óculos, lentes e acessórios para você encontrar os produtos que você ama com preços acessíveis e condições de pagamento incríveis. Entre e divirta-se!</p>
+    </div>
+
+    <img src="~/imagens/loja.jpg">
+</section>
+
+@section scripts{
+    <script lang="JavaScript">
+        var myIndex = 0;
+        carousel();
+
+        function plusDivs(n) {
+            showDivs(myIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { myIndex = 1 }
+            if (n < 1) { myIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            x[myIndex - 1].style.display = "block";
+        }
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 4000); // Change image every 2 seconds
+        }
+
+            //$(document).ready(function () {
+            //    if ($(window).width() < 600) {
+
+            //    }
+            //    else {
+
+            //    }
+            //});
+
+
+    </script>
+}

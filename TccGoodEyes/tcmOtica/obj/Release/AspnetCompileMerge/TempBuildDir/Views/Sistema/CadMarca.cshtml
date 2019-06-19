@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro da Marca";
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+
+<section class="titulo">
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+
+
+        <div>
+            @if (ViewBag.cod == "0")
+            {
+                <h2>Cadastro</h2>
+                ViewBag.modo = "cadastro";
+            }
+            else
+            {
+                <h2>Alterar</h2>
+                ViewBag.modo = "alterar";
+            }
+            <h1>Marca</h1>
+        </div>
+    </div>
+</section>
+
+<section class="cadMarca cadcontainer">
+    <form action="CadMarca?cod=@ViewBag.cod&modo=@ViewBag.modo" method="post" id="novo">
+
+        <h3>Dados</h3>
+        <section class="cad">
+            <section class="cadcoluna col1">
+
+                <label>Marca<em>*</em></label>
+                <input type="text" name="txtMarca" id="txtMarca" value="@ViewBag.Marca" required>
+
+                <select id="esconder">
+                    @foreach (string i in ViewBag.ListaDeMarcas)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                    @foreach (string i in ViewBag.ListaDeMarcasLente)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+
+                <label>Selecione o Fornecedor <em>*</em></label>
+
+                <input type="hidden" name="forne" id="forne" value="@ViewBag.codForne" />
+                <select required name="txtforne" id="txtforne">
+                    <option selected disabled>Escolha uma opção</option>
+                    @foreach (tccGoodEyes.Models.FornecedorModel i in ViewBag.fornecedores)
+                    {
+                        <option value="@i.cd_fornecedor">@i.nome @i.sobrenome</option>
+                    }
+                </select>
+
+
+            </section>
+        </section>
+        <input type="submit" name="btnCadForn" id="btnCadForn" class="btnCad" value="Cadastrar">
+    </form>
+</section>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            var $titulo = $('.titulo h2').text();
+            
+
+            if ($titulo == "Alterar") {
+                $('#btnCadForn').val("Alterar");
+                $('#btnCadForn').attr('id', 'edicao');
+            }
+            else {
+                var repetir = false;
+                $("#txtMarca").blur(function () {
+                    $("#esconder option").each(function () {
+                        if ($("#txtMarca").val().toLowerCase() == $(this).val().toLowerCase()) {
+                            repetir = true;
+                            alert("Essa marca já está cadastrada!");
+
+                            return false; //sair do loop
+
+                        } else {
+                            repetir = false;
+                        }
+                    });
+                });
+
+                $(this).submit(function (e) {
+                    
+                    if (repetir == true) {
+                        alert("Essa marca já está cadastrada! " +
+                            "Por favor verifique o nome da marca, se deseja fazer alterações vá na página de consulta.");
+                        e.preventDefault();
+                        return false;
+                    }
+                   
+                });
+            }
+
+            atualizaSelect("#forne", "txtforne");
+        }); //document ready
+
+    </script>
+
+}

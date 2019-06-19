@@ -1,0 +1,382 @@
+﻿
+@{
+    ViewBag.Title = "Lente";
+}
+
+<section class="titulo lente">
+    <h2>Escolha sua Lente</h2>
+</section>
+<h3 id="erroNoti">Produto adicionado com sucesso</h3>
+<section class="contLente">
+    <form action="Lente" method="post" >
+        <div class="linhas linha1">
+
+            <div>
+                <h3>Escolha o Tipo de Grau</h3>
+
+                <div class="horizontal">
+                    <div>
+                        <label>
+                            <input type="hidden" name="grau"  id="grau" value="@ViewBag.grau" />
+                            <input type="radio" name="txtGrau" class="txtGrau" value="ARMAÇÃO" checked />
+                            SÓ QUERO A ARMAÇÃO
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="txtGrau" class="txtGrau" value="MONOFOCAL" />
+                            MONOFOCAL
+                        </label>
+                        <p class="explica">Para perto ou longe</p>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="txtGrau" class="txtGrau" value="MULTIFOCAL" />
+                            MULTIFOCAL
+                        </label>
+                        <p class="explica">Lentes para Presbiopia</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="linhas linha2">
+
+            <div>
+                <h3>Escolha a Lente</h3>
+
+                <div class="horizontal">
+
+                    <div class="lentes">
+                        <input type="hidden" name="lente" id="lente" value="@ViewBag.grau" />
+                        @foreach (tccGoodEyes.Models.ProdutoModel i in ViewBag.ListaLente)
+                        {
+                            string[] des = i.descricao.Split(' ');
+                            ViewBag.d = des;
+                        <div class="@ViewBag.d[1]">
+                            <input type="radio" name="txtLente" class="txtLente" value="@i.cd_produto" />
+                            <ul>
+                                <li class="lenteMarca"><span>Marca: </span> @i.nm_marca </li>
+                                <li><span>Material: </span> @ViewBag.d[0]</li>
+                                <li><span>Tratamento da Lente: </span> @i.aspecto</li>
+                                <li class="lentePreco"><span>Preço: </span> @i.vl_preco_unitario </li>
+                                <li><span>Garantia: </span> @i.garantia </li>
+                            </ul>
+                        </div>
+                        }
+                    </div>
+
+                </div> @*HORIZONTAL*@
+            </div>
+        </div>@*LINHA2*@
+
+        <div class="linhas linha3">
+            <div class="horizontal botoesLente">
+                <a id="addReceita" class="btnSecundario">ADICIONAR NOVA RECEITA</a>
+                <a id="escolheReceita" class="btnSecundario">ESCOLHER RECEITA</a>
+            </div>
+        </div>
+
+
+        <div class="linhas linha3">
+
+            <div class="receitaAdicionar">
+                <h3>Adicione a receita</h3>
+
+
+                <table class="receita">
+                    <tr>
+                        <td></td>
+                        <td><label>ESF.</label></td>
+                        <td><label>CIL.</label></td>
+                        <td><label>EIXO</label></td>
+                        <td><label>ADIÇÃO</label></td>
+                        <td title="Distância Pupilar"><label>D.P.</label></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>OE</label></td>
+                        <td><input type="text" name="txtOEEsf" id="txtOEEsf" placeholder="Ex: +1" /></td>
+                        <td><input type="text" name="txtOECil" id="txtOECil" placeholder="Ex: -1"/></td>
+                        <td><input type="text" name="txtOEEixo" id="txtOEEixo" placeholder="Ex: 1º"/></td>
+                        <td><input type="text" name="txtOEAdicao" id="txtOEAdicao" placeholder="Ex: +1"/></td>
+                        <td><input type="text" name="txtDP" id="txtDP"  title="Distância Pupilar" placeholder="Ex: 12mm"/></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>OD</label></td>
+                        <td><input type="text" name="txtODEsf" id="txtODEsf"  placeholder="Ex: +1"/></td>
+                        <td><input type="text" name="txtODCil" id="txtODCil" placeholder="Ex: -1"/></td>
+                        <td><input type="text" name="txtODEixo" id="txtODEixo" placeholder="Ex: 1º" /></td>
+                        <td><input type="text" name="txtODAdicao" id="txtODAdicao" placeholder="Ex: +1"/></td>
+                    </tr>
+                </table>
+
+                <div class="horizontal">
+                    <div class="doisinput">
+                        <div>
+                            <label>Data da Receita</label>
+                            <input type="text" name="txtDataReceita" id="txtDataReceita" placeholder="Ex: 21/12/2018">
+                        </div>
+                        <div>
+                            <label>Data da Validade</label>
+                            <input type="text" name="txtDataValidade" id="txtDataValidade" placeholder="Ex: 21/12/2019">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Nome do Oftalmo</label>
+                        <input type="text" name="txtOftalmo" id="txtOftalmo">
+                    </div>
+                    <div>
+                        <label>Sobrenome do Oftalmo</label>
+                        <input type="text" name="txtSobreOftalmo" id="txtSobreOftalmo">
+                    </div>
+                    <div>
+                        <label>Observação</label>
+                        <textarea id="observacao" name="observacao"></textarea>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="receitaEscolher">
+                @*<input type="hidden" name="receitaCod" id="receitaCod" value="@ViewBag.receita" />*@
+
+                @if (ViewBag.listReceita == null)
+                {
+                    <h3>Você não tem nenhuma receita cadastrada</h3>
+                }
+
+                @if (ViewBag.listReceita != null)
+                {
+                <h3>Escolha a receita pela data de validade</h3>
+                <select name="receitaCod" id="receitaCod" value="@ViewBag.receita" >
+                    <option selected disabled>Escolha uma opção</option>  
+                    @foreach (tccGoodEyes.Models.ReceitaModel receita in ViewBag.listReceita)
+                    {
+                    <option value="@receita.cd_receita">@receita.dt_validade</option>
+                    }
+                </select>
+                <section id="recContainer">
+                   
+                        @foreach (tccGoodEyes.Models.ReceitaModel receita in ViewBag.listReceita)
+                        {
+                            string[] od = receita.olho_direito.Split(' ');
+                            string[] oe = receita.olho_esquerdo.Split(' ');
+
+                            <div class="rec" id="@receita.cd_receita">
+                                <table class="receita">
+                                    <tr>
+                                        <td></td>
+                                        <td><label>ESF.</label></td>
+                                        <td><label>CIL.</label></td>
+                                        <td><label>EIXO</label></td>
+                                        <td><label>ADIÇÃO</label></td>
+                                        <td title="Distância Pupilar"><label>D.P.</label></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label>OE</label></td>
+                                        @foreach (var e in oe)
+                                        {
+                                            <td>@e</td>
+                                        }
+                                        <td>@receita.distancia_pupilar</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label>OD</label></td>
+                                        @foreach (var d in od)
+                                        {
+                                            <td>@d</td>
+                                        }
+                                    </tr>
+                                </table>
+
+                                <div class="horizontal">
+                                    <div>
+                                        <label>Data da Receita</label>
+                                        <p>@receita.dt_receita</p>
+                                    </div>
+
+                                    <div>
+                                        <label>Data da Validade</label>
+                                        <p>@receita.dt_validade</p>
+                                    </div>
+
+                                    <div>
+                                        <label>Nome do Oftalmo</label>
+                                        <p>@receita.nm_oftalmo @receita.sobrenome_oftalmo</p>
+                                    </div>
+
+                                    <div>
+                                        <label>Observação</label>
+                                        <p>@receita.observacao</p>
+                                    </div>
+                                </div>
+
+                                @*<label class="btnSecundario">
+
+                                    <input type="checkbox" name="receitaEscolhida" id="receitaEscolhida" value="@receita.codReceita" />
+                                    ESCOLHER RECEITA
+                                </label>*@
+
+                            </div>
+
+                        }
+                    
+                </section>
+                }
+            </div>
+          
+        </div>
+        
+        <div class="linhas linha4">
+
+            <div>
+                
+                <table class="tblpreco">
+                    @{
+                        double t = 0;
+                    }
+                    @foreach (tccGoodEyes.Models.ProdutoModel prod in ViewBag.listaProd)
+                    {
+                        ViewBag.subtotal = Convert.ToDouble(prod.vl_preco_unitario) * Convert.ToDouble(prod.qt_item);
+                        t = t + Convert.ToDouble(prod.vl_preco_unitario) * Convert.ToDouble(prod.qt_item);
+                        ViewBag.total = t;
+                        <tr>
+                            <td>@prod.nm_marca</td>
+                            <td>@prod.vl_preco_unitario</td>
+                        </tr>
+                    }
+                    <tr class="totalpreco">
+                        <td>TOTAL</td>
+                        <td>@ViewBag.total</td>
+                    </tr>
+                </table>
+
+                <input type="submit" name="btnLente" id="btnLente" value="Ir para o Carrinho de Compras">
+            </div>
+
+        </div>
+
+    </form>
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".txtGrau").change(function () {
+                if ($(this).val() === "MONOFOCAL") {
+                    $(".Monofocal").show();
+                    $(".Multifocal").hide();
+                    $("#btnLente").val("Adicionar ao Carrinho");
+                }
+                else if ($(this).val() === "MULTIFOCAL") {
+                    $(".Monofocal").hide();
+                    $(".Multifocal").show();
+                    $("#btnLente").val("Adicionar ao Carrinho");
+                } else {
+                    $("#btnLente").val("Ir para o Carrinho de Compras");
+                }
+
+                if ($(this).val() === "MONOFOCAL" || $(this).val() === "MULTIFOCAL") {
+                    $(".linha2").css("display", "flex");
+                    $(".linha3").css("display", "flex");
+
+                    $("#txtOEEsf").attr('required', true);
+                    $("#txtODEsf").attr('required', true);
+                    $("#txtDP").attr('required', true);
+                    $("#txtDataReceita").attr('required', true);
+                    $("#txtDataValidade").attr('required', true);
+                    $("#txtOftalmo").attr('required', true);
+
+                    $(".linha2 select").attr('required', true);
+                }
+                else if ($(this).val() === "ARMAÇÃO") {
+                    $(".linha2").css("display", "none");
+                    $(".linha3").css("display", "none");
+
+                    $(".linha2 input").attr('required', false);
+                    $(".linha2 select").attr('required', false);
+                    $(".linha3 input").attr('required', false);
+                }
+            });
+
+            //---------------------------------
+            //---------------------------------------------------
+            $("#addReceita").click(function () {
+               $(".receitaAdicionar").show();
+                $(".receitaEscolher").hide();
+
+                $("#txtOEEsf").attr('required', true);
+                $("#txtODEsf").attr('required', true);
+                $("#txtDP").attr('required', true);
+                $("#txtDataReceita").attr('required', true);
+                $("#txtDataValidade").attr('required', true);
+                $("#txtOftalmo").attr('required', true);
+
+                $('.receitaEscolher input').attr('required', false);
+               
+            });
+
+            //---------------------
+            $("#escolheReceita").click(function () {
+                $(".receitaEscolher").show();
+                $(".receitaAdicionar").hide();
+
+                $('.receitaEscolher input').attr('required', true);
+                $('.receitaAdicionar input').attr('required', false);
+            });
+
+            $(".rec").hide();
+
+            $("#receitaCod").change(function () {
+                $(".rec").hide();
+                var codigo = $(this).val();
+                $("#" + codigo).show();
+            });
+            //-------------------------------
+            //$("#receitaEscolhida").change(function () {
+            //    console.log("sdf");
+                
+            //    if ($(this).closest("label").hasClass("btnSecundario")) {
+            //        $(this).closest("label").removeClass("btnSecundario");
+            //        $(this).closest("label").addClass("btnNormal");
+            //        $(this).closest(".rec").css("background-color", "#D3EDF0");
+
+            //    } else {
+            //        $(this).closest("label").removeClass("btnNormal");
+            //        $(this).closest("label").addClass("btnSecundario");
+            //        $(this).closest(".rec").css("background-color", "#fff");
+                    
+            //    }
+            //});
+
+
+            pegaValor("#lente", "txtLente");
+            pegaValor("#grau", "txtGrau");
+            //pegaValor("#receitaCod", "receitaEscolhida");
+
+            if ($("#lente").val() != "" || $("#lente").val() == "0") {
+                $("input[name='txtLente']").each(function () {     
+                    $(this).prop('checked', false );
+                });
+            }
+
+            //$("#txtOEEsf").blur(function () {
+            //    $("#receitaCod").val(0);
+            //    $("input[name='txtLente']").prop('checked', true);
+            //});
+            
+        });
+    </script>
+
+}

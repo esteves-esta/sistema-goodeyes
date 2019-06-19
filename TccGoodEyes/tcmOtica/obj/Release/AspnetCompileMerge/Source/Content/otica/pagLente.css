@@ -1,0 +1,227 @@
+﻿.lente {
+    background-image: url("/imagens/header.jpg");
+    background-position: left;
+    padding: 5% 0;
+}
+
+.Multifocal, .Monofocal {
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+    letter-spacing: .5px;
+    font-size: .9em;
+    line-height: 1.7em;
+    color: var(--cinza-escuro);
+    margin-bottom:5px;
+}
+
+.receitaAdicionar .doisinput {
+    width: 30%;
+}
+
+.Multifocal ul, .Monofocal ul {
+    padding-left: 15px;
+}
+
+.Multifocal span, .Monofocal span {
+    font-weight:bold;
+}
+
+.contLente {
+    width: 100%;
+}
+
+.contLente label {
+    font-weight: 500;
+}
+
+.contLente .trata {
+    font-weight: 400;
+    text-transform: unset;
+    letter-spacing: 1px;
+}
+
+.receitaAdicionar, .receitaEscolher{
+    display:none;
+}
+
+.contLente h3 {
+    color: var(--azul-secundario);
+}
+
+/*
+ABAIXO PARA SECOES FICAREM COM 100% DE LARGURA PARA 
+PODER COLCOAR O BACKGROUND COLOR E FICAR COMPLETO
+*/
+
+.contLente .linhas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3% 0;
+    margin-bottom: 15px;
+}
+
+.contLente .linhas > div {
+    width: 80vw;
+}
+
+.contLente .linhas h3 {
+    margin-bottom: 30px;
+}
+
+/* PARA QUE ELEMENTOS FIQUEM NA HORIZONTAL*/
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.lentes {
+    height: 290px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+/*
+    ELEMENTOS QUE EXPLICA O QUE É MONO E MULTI FOCAL
+*/
+.explica {
+    font-size: .8em;
+    color: var(--cinza-claro2);
+    letter-spacing: 1px;
+}
+
+/*
+    PARA PODER MOSTRAR AO CLIAR NO RADIO BUTTON
+*/
+.contLente .linha2, .contLente .linha3 {
+    display: none;
+}
+
+/*
+    PARA EXPANDIR BOTAO DE ADICIONAR E ESCOLHER RECEITA
+*/
+
+.botoesLente .btnSecundario {
+    width: 45%;
+}
+
+
+/*
+    CUSTOMIZAÇÃO DAS TABELAS DA RECEITA
+    COM E SEM INPUTS
+*/
+.receita input {
+    width: 80px;
+    margin: 0px;
+}
+
+.receita td {
+    padding: 5px 5px;
+}
+
+.receitaEscolher td {
+    font-weight: 500;
+    color: var(--cinza-escuro);
+    width: 80px;
+    height: 40px;
+    text-align: center;
+}
+
+.receitaEscolher tr:first-child td {
+    height: auto;
+}
+
+.receitaEscolher td:first-child {
+    width: auto
+}
+
+#recContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#receitaEscolhida {
+    display: none;
+}
+
+/*
+    CONTAINER PARA COLOCAR AS RECEITAS JA CADASTRADAS
+    PARA QUE O CLIENTE POSSA ESCOLHER ENTRE ELAS
+*/
+.rec {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px dashed var(--azul-secundario);
+    padding: 2%;
+}
+
+    .rec .btnSecundario, .rec .btnNormal {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+.receitaEscolher p {
+    font-weight: 500;
+    color: var(--cinza-escuro);
+}
+
+.contLente .linha2 {
+    width: 100%;
+    background-color: var(--azul-claro);
+}
+
+.contLente .linha4 div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.receitaAdicionar .horizontal, .receitaEscolher .horizontal {
+    margin-top: 45px;
+}
+
+
+/*
+    TABELA DO PRECO FINAL
+*/
+
+.tblpreco td {
+    padding: 10px;
+    border-bottom: 1px solid #dedede;
+    color: var(--cinza);
+    font-size: 1.2em;
+    letter-spacing: 3px;
+}
+
+.linha4 td:first-child {
+    text-align: right;
+}
+
+.totalpreco td {
+    color: var(--preto);
+    font-weight: 800;
+    font-size: 1.4em;
+    border-bottom: none
+}
+
+.tblpreco {
+    margin-bottom: 35px
+}
+
+@media screen and (max-width: 600px) {
+
+    .horizontal > div {
+        margin: 25px 0;
+    }
+
+    .receita input {
+        width: 50px;
+    }
+}

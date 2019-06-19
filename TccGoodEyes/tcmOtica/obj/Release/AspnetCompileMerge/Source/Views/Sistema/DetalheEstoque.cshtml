@@ -1,0 +1,119 @@
+﻿@model tccGoodEyes.Models.ProdutoModel
+
+@{
+    ViewBag.Title = "Detalhe do Estoque";
+    if (ViewBag.Gerente == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+    }
+    else if (ViewBag.Gerente == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutSistema.cshtml";
+    }
+}
+
+    <section class="titulo">
+        <h2>Detalhes do Estoque</h2>
+    </section>
+
+
+    <section class="contColunas detEstoque">
+
+        <section class="col1">
+            <h3>Dados do Produto</h3>
+
+            <table class="table">
+                <tr>
+
+                    <th>
+                        Código do Produto
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.cd_produto)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Marca
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.nm_marca)
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <th>
+                        Tipo do produto
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.tipo)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Descrição do produto
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.descricao)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Aspecto do produto
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.aspecto)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Preço unitário
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.vl_preco_unitario)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Garantia do produto
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.garantia)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Quantidade em estoque
+                    </th>
+                    <td>
+                        @ViewBag.qtde
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+
+        <section class="col2">
+            <h3>Imagem do Produto</h3>
+
+            <img src="@Html.DisplayFor(model => model.caminho_imagem)" alt="@Html.DisplayFor(model => model.caminho_imagem)" />
+        </section>
+
+
+    </section>
+
+    <section class="botoes">
+        <a class="btnSecundario" href="/Sistema/ConsEstoque?aviso=0">Voltar para consulta</a>
+
+        <a class="btnNormal" href="/Sistema/CadProduto?cod=@Model.cd_produto&aviso=0">Editar</a>
+    </section>

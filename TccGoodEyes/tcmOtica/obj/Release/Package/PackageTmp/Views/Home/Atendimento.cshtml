@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Atendimento";
+}
+
+<div class="titulo">
+    <h2>
+
+    CENTRAL DE ATENDIMENTO</h2>
+</div>
+
+<section class="containerflex">
+    <div class="col1 atend">
+        <h3>PRAZO DE ENTREGA + </h3>
+        <p>Atendemos todo o território Nacional através dos Correios e transportadoras. Os prazos de entrega variam de acordo com sua localidade. Os prazos são contados em dias úteis e passam a contar a partir da aprovação do pagamento da emissora do cartão de crédito. No caso de boleto bancário é necessária a compensação da instituição financeira que ocorre de 1 até 3 dias úteis após o pagamento.</p>
+
+        <h3>PAGAMENTO NÃO APROVADO +</h3>
+        <p>Isto pode ter acontecido por alguns fatores, como digitação incorreta de dados do cartão de crédito, limite indisponível ou algum problema no sistema da operadora.</p>
+
+        <h3>ESQUECI A SENHA DE ACESSO, O QUE FAÇO? +</h3>
+        <p>Se ao acessar o site e notar que esqueceu a sua senha, basta clicar no campo "Esqueci minha senha" e é só informar o e-mail cadastrado, e será enviado ao seu email um link para cadastrar uma nova senha.</p>
+
+        <h3>GARANTIA DE SATISFAÇÃO + </h3>
+        <p>Caso o cliente não fique 100% satisfeito e queira trocar ou devolver os óculos por qualquer razão, sem uso (embalagem original e produto sem danificações), 
+        o cliente terá até 30 dias após a entrega para entrar em contato com a Central de Relacionamento e 
+        solicitar a troca por outro produto ou a devolução do dinheiro na mesma forma na qual a compra foi realizada. 
+        A primeira troca é realizada por conta da GoodEyes, a partir da segunda troca, o cliente arcará com as custas do frete 
+        e a lente graduada, se adquirida</p>
+    </div>
+
+    <div class="col2 fale">
+        <h3>FALE CONOSCO</h3>
+
+        <h4>ATENDIMENTO PELO TELEFONE</h4>
+        <p>(11) 6559 - 3459</p>
+
+        <h4>ATENDIMENTO POR EMAIL</h4>
+        <p>atendimento@goodeyes.com.br</p>
+
+        <h4>HORÁRIO DE ATENDIMENTO</h4>
+        <p> Segunda à sexta: 8h30 às 22h</p>
+        <p>	Sábado: 8h30 às 20h</p>
+        <p> Domingos: 8h30 às 18h (exceto feriados)</p>
+    </div>
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            //ATEDIMENTO
+            $(".atend h3").next().css("display", "none");
+
+            $(".atend h3").on("click", function () {
+                $(this).next().toggle();
+            })
+        });
+    </script>
+}

@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "RedefinirSenha";
+}
+
+<section class="titulo">
+    <h2>
+        Esqueceu a senha
+    </h2>
+</section>
+
+<section>
+
+    @if (ViewBag.ErroEmail == null)
+    {
+        <p>Por favor digite seu email para podermos confirmar sua conta, e enviar um email para redefinir sua senha:</p>
+
+        <form action="RedefinirSenha" method="post">
+
+            <input type="email" name="email" id="email" />
+
+            <input type="submit" name="btnEnviar" value="Enviar" />
+
+        </form>
+    }
+    else if (ViewBag.ErroEmail == "Sucesso")
+    {
+        <h3>O email foi enviado com sucesso. Verifique sua caixa de email.</h3>
+
+        <p>Caso @ViewBag.emailCLi esteja associado a uma conta, 
+    você receberá um email com instruções sobre como criar uma nova senha.</p>
+    }
+    else if (ViewBag.ErroEmail != null && ViewBag.ErroEmail != "Sucesso")
+    {
+        <h3>Não foi possivel mandar o email. Por favor verifique se digitou o email corretamente e tente novamente.</h3>
+
+        <p>Por favor digite seu email para podermos confirmar sua conta, e enviar um email para redefinir sua senha:</p>
+
+        <form action="RedefinirSenha" method="post">
+
+            <label>Email</label>
+            <input type="email" name="email" id="email" />
+
+            <input type="submit" name="btnEnviar" value="Enviar" />
+
+        </form>
+    }
+
+
+
+</section>

@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "Cadastro do Funcionario";
+    Layout = "~/Views/Shared/_LayoutSistemaGerente.cshtml";
+}
+<h3 id="erroNoti">@ViewBag.MsgError</h3>
+<section class="titulo">
+    <div class="tituloIcone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+
+        <div>
+
+            @if (ViewBag.cod == "0")
+            {
+                <h2>Cadastro</h2>
+                ViewBag.modo = "cadastro";
+            }
+            else
+            {
+                <h2>Alterar</h2>
+                ViewBag.modo = "alterar";
+            }
+            <h1>Funcionário</h1>
+        </div>
+    </div>
+</section>
+
+<section id="cadFuncionario" class="cadcontainer">
+    <form action="CadFuncionario?cod=@ViewBag.cod&modo=@ViewBag.modo" method="post" class="formCad">
+        <h3>Dados Pessoais</h3>
+        <section class="cad contPessoal">
+            <div class="cadcoluna col1">
+                <div class="doisinput">
+                    <div>
+                        <label>Nome <em>*</em></label>
+                        <input type="text" name="txtNome" id="txtNome" value="@ViewBag.nome" required autofocus>
+                    </div>
+                    <div>
+                        <label>Sobrenome<em>*</em></label>
+                        <input type="text" name="txtSobrenome" id="txtSobrenome" value="@ViewBag.sobrenome" required>
+                    </div>
+                </div>
+
+                <label>Data de Nascimento<em>*</em></label>
+                <input type="text" name="txtData" id="txtData" value="@ViewBag.data" required placeholder="Ex: 21/08/2000">
+
+                <label>CPF<em>*</em></label>
+                <input type="text" name="txtCPF" id="txtCPF" value="@ViewBag.cpf" required>
+
+                <label>Telefone</label>
+                <input type="tel" name="txtTel" id="txtTel" value="@ViewBag.tel">
+            </div>
+
+            <div class="cadcoluna col2">
+                <label>Celular<em>*</em></label>
+                <input type="text" name="txtCel" id="txtCel" required value="@ViewBag.cel">
+
+                <label>Email<em>*</em></label>
+                <input type="email" name="txtEmail" id="txtEmail" required value="@ViewBag.Email">
+
+                <label>Senha<em>*</em></label>
+                <input type="password" name="txtSenha" id="txtSenha" required value="@ViewBag.SenhaFun" maxlength="8">
+                <div id="senhaCondicoes">Sua senha deve conter 8 caracteres.</div>
+
+
+                <label>Confirmar a senha<em>*</em></label>
+                <input type="password" name="txtConfSenha" id="txtConfSenha" required value="@ViewBag.SenhaConfFun" maxlength="8">
+                <span id="confirmesenha"></span>
+            </div>
+        </section>
+
+        <h3>Endereço de Entrega</h3>
+        <section class="cad contEndereco">
+            <div class="cadcoluna col1">
+                <label>Endereço<em>*</em></label>
+                <input type="text" name="txtEnd" id="txtEnd" required value="@ViewBag.EndFun">
+
+                <div class="doisinput">
+                    <div>
+                        <label>Número<em>*</em></label>
+                        <input type="number" name="txtNum" id="txtNum" required value="@ViewBag.NumFun">
+                    </div>
+
+                    <div>
+                        <label>CEP<em>*</em></label>
+                        <input type="text" name="txtCEP" id="txtCEP" required maxlength="8" value="@ViewBag.CepFun">
+                    </div>
+                </div>
+
+                <label>Complemento</label>
+                <input type="text" name="txtComp" id="txtComp" value="@ViewBag.CompleFun">
+
+            </div>
+
+            <div class="cadcoluna col2">
+                <label>Bairro<em>*</em></label>
+                <input type="text" name="txtBairro" id="txtBairro" required value="@ViewBag.BairroUfFun">
+
+                <label>Cidade<em>*</em></label>
+                <input type="text" name="txtCidade" id="txtCidade" required value="@ViewBag.CidadeFun">
+
+                <div class="doisinput">
+
+                    <div>
+                        <label>Estado<em>*</em></label>
+                        <input type="text" name="txtEstado" id="txtEstado" required value="@ViewBag.EstadoFun">
+                    </div>
+
+                    <div>
+                        <label>UF<em>*</em></label>
+                        <input type="hidden" name="uf" id="uf" value="@ViewBag.uf" />
+                        <select id="txtUF" name="txtUF" required>
+                            <option selected disabled>Escolha a uf</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="CE">CE</option>
+                            <option value="BA">BA</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h3>Posição</h3>
+        <div class="cadcoluna col1">
+            <label>Cargo<em>*</em></label>
+            <input type="hidden" name="cargo" id="cargo" value="@ViewBag.cargo" />
+            <select name="txtCargo" id="txtCargo" class="txtPesquisa" required>
+                <option selected disabled>Escolha o cargo</option>
+                <option value="Atendente">Atendente</option>
+                <option value="Gerente">Gerente</option>
+                <option value="Vendedor">Vendedor</option>
+                <option value="Segurança">Segurança</option>
+                <option value="Recepcionista">Recepcionista</option>
+            </select>
+        </div>
+
+
+        <input type="submit" name="btnCadFun" id="btnCadFun" value="Cadastrar">
+
+
+    </form>
+
+
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            atualizaSelect("#uf", "txtUF");
+            atualizaSelect("#cargo", "txtCargo");
+
+            var $titulo = $('.titulo h2').text();
+
+            if ($titulo == "Alterar") {
+                $('#txtEmail').prop('disabled', true);
+                $('#btnCadFun').val("Alterar");
+                $('#btnCadFun').attr('id', 'edicao');
+            }
+            $(this).submit(function (e) {
+                if ($(".titulo h2") != "Alterar Endereço de Entrega") {
+                    if ($senha.val().length < 8) {
+                        $confsenha.focus();
+                        alert("A senha deve conter 8 caracteres.");
+
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+
+}
