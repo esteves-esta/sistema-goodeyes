@@ -6,12 +6,11 @@ Este sistema foi desenvolvido como trabalho de conclusão de curso para o Curso 
 
 **Linguagens usadas neste projeto: ASP.NET MVC5, Mysql, jQuery, CSS, HTML.**
 
-Este projeto de trabalho de conclusão de curso foi realizado em grupo e envolveu análise de sistema, projeção de banco de dados e um sistema para ASP.NET MCV, e a realização da infraestrutura apresentada na planta baixa da parte administrativa da loja. 
+Este projeto de conclusão de curso foi realizado em grupo e envolveu análise de sistema, banco de dados e um sistema para ASP.NET MCV5. 
 
 O sistema GoodEyes para gerenciamento de óticas foi estruturado para ser usado por dois tipos de usuários. O primeiro tipo é o cliente que usará o site para consultar o catálogo de produtos da loja, realizar seu cadastro e efetuar um pedido. O segundo tipo é o funcionário da Ótica Good Eyes, este usuário usará o site para gerenciar o estoque da loja, seus fornecedores, vendas e clientes.
 
 Para atender a estes dois tipos de usuários o sistema possui as seguintes funcionalidades:
-
 
 
 **Funcionalidades para o cliente:**
@@ -58,26 +57,26 @@ Para atender a estes dois tipos de usuários o sistema possui as seguintes funci
 
 ---
 ### PÁGINA DE ESCOLHA DE LENTES
-*Após escolher adicionar um produto ao seu carrinho de compra, ação que só pode ser estando logado no sistema, o usuário será redirecionado a esta página onde poderá escolher ou não uma lente com receita para seu óculos.*
+*Após escolher adicionar um produto ao seu carrinho de compra, ação que só pode ser feita estando logado no sistema, o usuário será redirecionado a esta página onde poderá escolher ou não uma lente com receita para seu óculos.*
 
 ![PÁGINA DE ESCOLHA DE LENTES](https://github.com/esteves-esta/sistema-goodeyes/blob/master/telasDoSistema/PAG%2010%20LENTES.png "PÁGINA DE ESCOLHA DE LENTES")
 
 ---
 ### PÁGINA PRINCIPAL DOS FUNCIONÁRIOS
-*Página disponível somente para funcionários e gerentes, no sistema eles são reconhecidos como nivel 2 e 3.*
+*Página disponível somente para funcionários e gerentes.*
 
 ![PÁGINA PRINCIPAL DOS FUNCIONÁRIOS](https://github.com/esteves-esta/sistema-goodeyes/blob/master/telasDoSistema/PAG%2014%20PRINCIPAL%20FUNCIONARIO.png "PÁGINA PRINCIPAL DOS FUNCIONÁRIOS")
 
 ---
 ### PÁGINA DE CADASTRO DE PRODUTOS
-*O funcionário escolherá o tipo de produto e a partir desta escolhe lhe será apresentado os campos necessários para cadastro, todos os campos possuem verificação de dados.*
+*O funcionário escolherá o tipo de produto e a partir desta escolha será apresentado os campos necessários para cadastro, todos os campos possuem verificação de dados.*
 
 ![PÁGINA DE CADASTRO DE PRODUTOS](https://github.com/esteves-esta/sistema-goodeyes/blob/master/telasDoSistema/PAG%2019%20CAD%20PRODUTO.png "PÁGINA DE CADASTRO DE PRODUTOS")
 
 ---
 
 ### PÁGINA DE CONSULTA DE ESTOQUE
-*Na página de consulta o funcionário poderá pesquisar produtos por tipo, marca, material e preço. Alem disso ele poderá consulta as informações de todos os produtos cadastros em detalhe ao clicar no botão Detalhes, também podendo edita-los ou deleta-los.*
+*Na página de consulta o funcionário poderá pesquisar produtos por tipo, marca, material e preço. Alem disso ele poderá consultar as informações de todos os produtos cadastrados em detalhe ao clicar no botão Detalhes, também podendo edita-los ou deleta-los.*
 
 ![PÁGINA DE CONSULTA DE ESTOQUE](https://github.com/esteves-esta/sistema-goodeyes/blob/master/telasDoSistema/PAG%2022%20CONSULTA%20PRODUTO.png "PÁGINA DE CONSULTA DE ESTOQUE")
 
