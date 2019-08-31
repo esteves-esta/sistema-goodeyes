@@ -1,7 +1,4 @@
 ## Sistema GoodEyes para gerenciamento de Óticas 
-[LINK DO SITE]()
-
-
 Este sistema foi desenvolvido como trabalho de conclusão de curso para o Curso Técnico de Informática.
 
 **Linguagens usadas neste projeto: ASP.NET MVC5, Mysql, jQuery, CSS, HTML.**
